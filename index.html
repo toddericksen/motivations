@@ -4,10 +4,306 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+      content="Campfire career motivations assessment. When our work aligns with our motivations, we feel more fulfillment and satisfaction. Use this assessment to understand what drives you." />
+    <meta name="keywords" content="manager training, digital peer coaching,leadership development, " />
 
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:site:id" content="">
+    <meta name="twitter:title" content="Campfire Motivations Assessment" />
+    <meta name="twitter:description" content="When our work aligns with our motivations, we feel more fulfillment and satisfaction. Use our assessment to understand what drives you.">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:creator:id" content="">
+
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="preview-campfire-motivators.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Campfire career motivators assessment" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="preview-campfire-motivators.png" />
+    <meta property="og:url" content="https://toddericksen.github.io/motivations/" />
+    <meta property="og:description" content="When our work aligns with our motivations, we feel more fulfillment and satisfaction. Use our assessment to understand what drives you." />
+    <meta property="og:site_name" content="Campfire" />
+
+  <title>Campfire Career Assessments - Motivations</title>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap');
+
+html {
+  font-size:  17px;
+}
+body {
+  /*background: #ECECF7;*/
+  /*background: #882288;*/
+  background:  #24044E;
+  /*background: #fff;*/
+  text-align: center;
+  font-family: "Spartan";
+  letter-spacing: -0.025rem;
+  color: #24044E;
+}
+
+p {line-height: 1.5;}
+
+span.description {
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+  font-size:  .75rem;
+  font-weight:  600;
+}
+#stage {
+  position: fixed;
+  height: calc(100vh - 48px);
+  width:  calc(100vw - 48px);
+  top:  24px;
+  left:  24px;
+  border-radius:  13px;
+  background: rgba(255,255,255, .95);
+  box-shadow: 0 3px 20px rgba(0,0,0,.125);
+  overflow:  hidden;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.scene.intro {
+  background: url('sunrise.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.section {
+  border: none;
+  border-radius: 11px;
+  width: calc(100% - 4rem);
+  max-width:  850px;
+}
+
+
+h1 {
+  font-size:3.5rem;
+  font-weight: 800;
+  letter-spacing: -.125rem;
+}
+
+h2 {
+  padding: 0 3rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -.075rem;
+}
+
+.intro h1 {
+  margin-bottom: 0rem;
+}
+
+.intro p {
+  /*color: rgba(38, 47, 86, .75) ;*/
+  margin:  .5rem auto 3rem;
+  font-size:  1rem;
+  font-weight:  400;
+  width:  100%;
+  max-width:  650px;
+}
+
+.intro p strong {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color:  rgba(0,0,0,.75);
+}
+
+.cards {
+  /*display: flex;*/
+  /*flex-flow: row wrap;*/
+  /*justify-content: space-evenly;*/
+  /*align-content: center;*/
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 960px;
+}
+
+.card {
+  perspective: 500px;
+  will-change: transform;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 250px;
+  height: 100px;
+  display: inline-block;
+  margin: .75rem;
+  font-weight:  500;
+}
+
+.card .front, .card .back {
+  background: rgba(255,255,255,.8);
+  border-radius: 9px;
+  border: 2px solid rgba(255,255,255,.8);
+  /*border: 2px solid rgba(84,42,0220,.2);*/
+  flex-flow: column nowrap;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.012), 0 2px 6px rgba(0,0,0,0.2) ;
+  transition: all .25s cubic-bezier(.25,.8,.25,1);
+  
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  display: flex;
+  backface-visibility: hidden;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+
+.card .front {
+  transform: rotateY(0deg);
+}
+
+
+.card .back {
+  transform: rotateY(-180deg);
+  /*background: #542ADC;*/
+  /*background:  #6A3DC5;*/
+  /*background:  #FBBE55;*/
+  background: #24044E;
+  color: #fff;
+}
+
+.card.is_flipped .back {
+  font-weight: 700;
+  letter-spacing: -0.0125rem;
+  transform: rotateY(0deg) translateZ(40px); 
+  box-shadow: 0 2px 6px 4px rgba(0,0,0,.1), 0 0px 8px -4px rgba(0,0,0,0.5);
+}
+
+.card.is_flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card .front:hover, .card .back:hover {
+  cursor:pointer;
+  box-shadow: 0 12px 12px -4px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.24);
+}
+
+
+button {
+  cursor:  pointer;
+  background: #24044E;
+  color:  #fff;
+  border:  none;
+  font-family: "Spartan";
+  padding:  1.25rem 2rem 1rem 2rem;
+  border: 2px solid rgba(0,0,0,.25);
+  border-radius: 7px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
+}
+a.back_button {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #24044E;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  background: url(chevron.svg) no-repeat 0% 50%;
+  background-size: 25%;
+  height: 12px;
+  padding-left: 1.5rem;
+  display: block;
+}
+
+.shake_it_up {
+  animation: shake .3s forwards ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);  
+  }
+}
+
+@media all and (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  #stage {
+    height: 100vh;
+    width:  100vw;
+    top:  0;
+    left:  0;
+    border-radius: 0;
+  }
+
+  .scene.intro {
+    justify-content: center;
+  }
+
+  .scene {
+    justify-content: flex-start;
+  }
+
+  .section {
+    padding:  4rem 0;
+  }
+
+  .card {
+    perspective: 500px;
+    will-change: transform;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin:  0;
+  }
+  a.back_button {
+    left: 15px;
+    top: 20px;
+  }
+  .intro p {
+    font-size:  1rem;
+  }
+}
+  </style>
 </head>
 <body>
   <div id="stage">
@@ -302,6 +598,110 @@
     <button>Finish</button>
   </div>
   </div>
-  <script type="text/javascript" src="logic.js"></script>
+  <script type="text/javascript">
+    var cards = document.querySelectorAll('.card');
+var buttons = document.querySelectorAll('button');
+var backButtons = document.querySelectorAll('.back_button');
+
+var selectedDriversDiv = document.getElementById("selected-drivers")
+var selectedCards = {
+  0: 0,
+  1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  5: 0,
+  6: 0,
+}
+
+var selectedDrivers = []
+
+
+function randoRgb() {
+  var string = "rgb(";
+  string += Math.round(Math.random() * 200) + ",";
+  string += Math.round(Math.random() * 200) + ",";
+  string += Math.round(Math.random() * 200) + ")";
+  return string;
+}
+
+function nextScene(e) {
+  var nextScene = e.path[2].nextElementSibling
+  // console.log("next scene", nextScene)
+  nextScene.scrollIntoView({ behavior: 'smooth' });
+}
+
+function previousScene(e) {
+  console.log(e.path)
+  var previousScene = e.path[1].previousElementSibling
+  // console.log("next scene", prevScene)
+  previousScene.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+function renderDrivers() {
+  selectedDriversDiv.innerHTML = "";
+
+  selectedDrivers.forEach(function(value, index){
+    const cardDiv = document.createElement("div")
+    cardDiv.className = "card";
+    const frontDiv = document.createElement("div")
+    frontDiv.className = "front";
+    const backDiv = document.createElement("div")
+    backDiv.className = "back";
+    frontDiv.appendChild(document.createTextNode(value));
+    backDiv.appendChild(document.createTextNode(value));
+    cardDiv.appendChild(frontDiv)
+    cardDiv.appendChild(backDiv)
+    selectedDriversDiv.appendChild(cardDiv)
+    cardDiv.addEventListener( "click", cardSelected)
+  })
+}
+
+function cardSelected(e) {
+  console.log(e.path)
+
+  if (selectedCards[parseInt(e.path[2].dataset.group)] < parseInt(e.path[2].dataset.limit) || e.path[1].classList.contains("is_flipped")) {
+    e.path[1].classList.toggle("is_flipped");
+
+    if (e.path[1].classList.contains("is_flipped")) {
+      selectedCards[parseInt(e.path[2].dataset.group)] ++;
+      selectedDrivers.push(e.path[0].textContent);
+
+      if (e.path[2].id != "selected-drivers") {
+        renderDrivers()
+      }
+
+    } else {
+      selectedDrivers.splice(selectedDrivers.indexOf(e.path[0].textContent), 1)
+      // console.log(selectedDrivers)
+      selectedCards[parseInt(e.path[2].dataset.group)] --;
+      
+      if (e.path[2].id != "selected-drivers") {
+        renderDrivers()
+      }
+    }
+    
+  } else {
+    e.path[1].classList.add("shake_it_up");
+    setTimeout(removeShake, 500)
+  }
+  function removeShake(){
+    e.path[1].classList.remove("shake_it_up")
+  }
+}
+
+for(var i = 0; i < cards.length; i++) {
+  cards[i].addEventListener( "click", cardSelected)
+}
+
+for(var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener( "click", nextScene)
+}
+
+for(var i = 0; i < backButtons.length; i++) {
+  backButtons[i].addEventListener( "click", previousScene)
+}
+  </script>
 </body>
 </html>

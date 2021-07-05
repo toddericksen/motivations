@@ -632,7 +632,7 @@ function nextScene(e) {
 }
 
 function previousScene(e) {
-  console.log(e.path)
+  // console.log(e.path)
   var previousScene = e.path[1].previousElementSibling
   // console.log("next scene", prevScene)
   previousScene.scrollIntoView({ behavior: 'smooth' });
@@ -659,7 +659,7 @@ function renderDrivers() {
 }
 
 function cardSelected(e) {
-  console.log(e.path)
+  // console.log(e.path)
 
   if (selectedCards[parseInt(e.path[2].dataset.group)] < parseInt(e.path[2].dataset.limit) || e.path[1].classList.contains("is_flipped")) {
     e.path[1].classList.toggle("is_flipped");

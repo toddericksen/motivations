@@ -47,6 +47,12 @@ body {
   color: #24044E;
 }
 
+#campfire_logo {
+  position: absolute; 
+  bottom: 15px; 
+  left: 15px;
+}
+
 p {line-height: 1.5;}
 
 span.description {
@@ -100,8 +106,12 @@ h1 {
 h2 {
   padding: 0 3rem;
   font-size: 1.75rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -.075rem;
+}
+
+strong {
+  font-weight:  800;
 }
 
 .intro h1 {
@@ -316,7 +326,7 @@ a.back_button {
   <div id="stage">
     <div class="scene intro">
       <div class="section">
-        <img src="campfire-logo.svg" style="position: absolute; bottom: 0; left: 0;" />
+        <img src="campfire-logo.svg" id="campfire_logo" />
         <h1>Motivation Assessment</h1>
         <p><strong>When our work aligns with our motivations, we feel more fulfillment and satisfaction. Use this assessment to understand what drives you. </strong> 
 </p>  <span class="description">Directions</span>
@@ -597,7 +607,7 @@ a.back_button {
     <div class="scene">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Now, choose the <strong>six</strong> that really get you out of bed in the morning.</h2>
+        <h2>Now, choose the <strong>six</strong> that motivate you most.</h2>
         <div id="selected-drivers" class="cards" data-group="6" data-limit="6">
           
         </div>

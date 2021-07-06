@@ -40,7 +40,7 @@
       /*background: #ECECF7;*/
       /*background: #882288;*/
       background:  #24044E;
-      background: #fff;
+      /*background: #fff;*/
       text-align: center;
       font-family: "Spartan";
       letter-spacing: -0.025rem;
@@ -49,8 +49,8 @@
 
     #campfire_logo {
       position: absolute; 
-      bottom: 15px; 
-      left: 15px;
+      bottom: 25px; 
+      left: 20px;
     }
 
     p {line-height: 1.5;}
@@ -63,7 +63,7 @@
     }
 
     #stage {
-      /*position: fixed;*/
+      position: fixed;
       height: calc(100vh - 48px);
       width:  calc(100vw - 48px);
       top:  24px;
@@ -71,7 +71,7 @@
       border-radius:  13px;
       background: rgba(255,255,255, .95);
       box-shadow: 0 3px 20px rgba(0,0,0,.125);
-      /*overflow:  hidden;*/
+      overflow:  hidden;
     }
 
     .scene {
@@ -334,26 +334,38 @@
       margin:  0 auto;
     }
 
-    #report {
+    /*#report {
       display: flex;
       flex-flow: row no-wrap;
       justify-content: center;
       align-items:  flex-start;
-    }
+    }*/
 
     #finished_motivators {
-      width: 45%;
-      margin-right: 5% ;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content:  center;
+      justify-items: space-around;
+      align-items: space-around;
+      margin-top: 1rem;
     }
 
-    #focus_motivator {
-      width:  50%;
+    #focus_motivator h2 {
+      font-size:  2.75rem;
+      font-weight:  800;
+      line-height: .75;
+    }
+
+    .focus_description {
+      margin-bottom:  3rem;
     }
 
     .motivator {
       border:  1px solid #ccc;
       padding:  2rem;
-      margin:  0 0 1rem 0;
+      display:  inline-block;
+      margin:  .5rem;
+      border-radius:  5px;
     }
 
     @keyframes shake {
@@ -779,6 +791,18 @@
       <a href="#back" class="back_button">Back</a>
       <div class="section">
         <div id="report">
+          
+          <div id="focus_motivator">
+            <span class="description">Focus Motivator</span>
+            <h2>Creativity</h2>
+            <div class="focus_description">
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+
+          <span class="description">Core Motivators</span>
           <div id="finished_motivators">
             <div class="motivator">asdgh jhsagdj</div>
             <div class="motivator">asdgh jhsagdj</div>
@@ -786,14 +810,6 @@
             <div class="motivator">asdgh jhsagdj</div>
             <div class="motivator">asdgh jhsagdj</div>
             <div class="motivator">asdgh jhsagdj</div>
-          </div>
-          <div id="focus_motivator">
-            <h2>Focus kdjhskdjhas</h2>
-            <div class="focus_description">
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
           </div>
         </div>
     </div>

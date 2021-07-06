@@ -40,7 +40,7 @@
       /*background: #ECECF7;*/
       /*background: #882288;*/
       background:  #24044E;
-      /*background: #fff;*/
+      background: #fff;
       text-align: center;
       font-family: "Spartan";
       letter-spacing: -0.025rem;
@@ -61,8 +61,9 @@
       font-size:  .75rem;
       font-weight:  600;
     }
+
     #stage {
-      position: fixed;
+      /*position: fixed;*/
       height: calc(100vh - 48px);
       width:  calc(100vw - 48px);
       top:  24px;
@@ -70,7 +71,7 @@
       border-radius:  13px;
       background: rgba(255,255,255, .95);
       box-shadow: 0 3px 20px rgba(0,0,0,.125);
-      overflow:  hidden;
+      /*overflow:  hidden;*/
     }
 
     .scene {
@@ -87,6 +88,8 @@
     .scene.intro {
       background: url('sunrise.png') no-repeat 50% 50%;
       background-size: cover;
+      width:  102%;
+      height:  102%;
     }
 
     .section {
@@ -112,6 +115,7 @@
       font-size: 1.75rem;
       font-weight: 600;
       letter-spacing: -.075rem;
+      line-height: 1.33;
     }
 
     strong {
@@ -322,6 +326,34 @@
     ol li {
       margin-bottom:  1rem;
       line-height: 1.6;
+    }
+
+    .results .section {
+      width:  100%;
+      max-width:  960px;
+      margin:  0 auto;
+    }
+
+    #report {
+      display: flex;
+      flex-flow: row no-wrap;
+      justify-content: center;
+      align-items:  flex-start;
+    }
+
+    #finished_motivators {
+      width: 45%;
+      margin-right: 5% ;
+    }
+
+    #focus_motivator {
+      width:  50%;
+    }
+
+    .motivator {
+      border:  1px solid #ccc;
+      padding:  2rem;
+      margin:  0 0 1rem 0;
     }
 
     @keyframes shake {
@@ -716,18 +748,18 @@
       <a href="#back" class="back_button">Back</a>
       <div class="section">
         <h2>Narrow it down to your <strong>six</strong> core motivations</h2>
-        <div id="selected-drivers" class="cards" data-group="6" data-limit="6">
+        <div id="selected-motivators" class="cards" data-group="6" data-limit="6">
           
         </div>
         <button>Next</button>
     </div>
     
   </div>
-  <div class="scene focus-driver">
+  <div class="scene focus-motivator">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
         <h2>Choose <strong>one</strong> motivation to focus on improving</h2>
-        <div class="cards" id="top-drivers" data-group="7" data-limit="1">
+        <div class="cards" id="top-motivators" data-group="7" data-limit="1">
           
         </div>
         <button>Next</button>
@@ -736,13 +768,37 @@
   <div class="scene">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Describe <strong id="focusDriverText"></strong> being more fulfilled in your life. What would that look like?</h2>
+        <h2>Describe <strong id="focusMotivatorText"></strong> being more fulfilled in your life. What would that look like?</h2>
         <textarea></textarea>
     </div>
     <p>
-      <button>Save my Answers</button>
+      <button>View Results</button>
     </p>
   </div>
+  <div class="scene results">
+      <a href="#back" class="back_button">Back</a>
+      <div class="section">
+        <div id="report">
+          <div id="finished_motivators">
+            <div class="motivator">asdgh jhsagdj</div>
+            <div class="motivator">asdgh jhsagdj</div>
+            <div class="motivator">asdgh jhsagdj</div>
+            <div class="motivator">asdgh jhsagdj</div>
+            <div class="motivator">asdgh jhsagdj</div>
+            <div class="motivator">asdgh jhsagdj</div>
+          </div>
+          <div id="focus_motivator">
+            <h2>Focus kdjhskdjhas</h2>
+            <div class="focus_description">
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
 </div>
   <script type="text/javascript">
 var cards = document.querySelectorAll('.card');
@@ -753,8 +809,8 @@ var steps = document.querySelectorAll('.step');
 var steps_count = 0;
 var progress = document.getElementById('progress')
 
-var selectedDriversDiv = document.getElementById("selected-drivers")
-var topDriversDiv = document.getElementById("top-drivers")
+var selectedMotivatorsDiv = document.getElementById("selected-motivators")
+var topMotivatorsDiv = document.getElementById("top-motivators")
 
 var selectedCards = {
   0: 0,
@@ -767,10 +823,10 @@ var selectedCards = {
   7: 0
 }
 
-var selectedDrivers = []
-var topDrivers = []
+var selectedMotivators = []
+var topMotivators = []
 
-var topDriver = document.getElementById("focusDriverText");
+var topMotivator = document.getElementById("focusMotivatorText");
 
 function randoRgb() {
   var string = "rgb(";
@@ -807,10 +863,10 @@ function previousScene(e) {
 }
 
 
-function renderTop12Drivers() {
-  selectedDriversDiv.innerHTML = "";
+function renderTop12Motivators() {
+  selectedMotivatorsDiv.innerHTML = "";
 
-  selectedDrivers.forEach(function(value, index){
+  selectedMotivators.forEach(function(value, index){
     const cardDiv = document.createElement("div")
     cardDiv.className = "card";
     const frontDiv = document.createElement("div")
@@ -821,15 +877,15 @@ function renderTop12Drivers() {
     backDiv.appendChild(document.createTextNode(value));
     cardDiv.appendChild(frontDiv)
     cardDiv.appendChild(backDiv)
-    selectedDriversDiv.appendChild(cardDiv)
+    selectedMotivatorsDiv.appendChild(cardDiv)
     cardDiv.addEventListener( "click", cardSelected)
   })
 }
 
-function renderTop6Drivers() {
-  topDriversDiv.innerHTML = "";
+function renderTop6Motivators() {
+  topMotivatorsDiv.innerHTML = "";
 
-  topDrivers.forEach(function(value, index){
+  topMotivators.forEach(function(value, index){
     const cardDiv = document.createElement("div")
     cardDiv.className = "card";
     const frontDiv = document.createElement("div")
@@ -840,7 +896,7 @@ function renderTop6Drivers() {
     backDiv.appendChild(document.createTextNode(value));
     cardDiv.appendChild(frontDiv)
     cardDiv.appendChild(backDiv)
-    topDriversDiv.appendChild(cardDiv)
+    topMotivatorsDiv.appendChild(cardDiv)
     cardDiv.addEventListener( "click", cardSelected)
   })
 }
@@ -860,36 +916,36 @@ function cardSelected(e) {
 
       // decide what to do based on the id of the cards div
       switch(e.path[2].id) {
-        case "selected-drivers":
-          topDrivers.push(e.path[0].textContent); // put the selection in the top6 array
-          renderTop6Drivers();
-          // render the top Drivers
+        case "selected-motivators":
+          topMotivators.push(e.path[0].textContent); // put the selection in the top6 array
+          renderTop6Motivators();
+          // render the top Motivators
           break;
-        case "top-drivers":
-          topDriver.textContent = e.path[0].textContent
+        case "top-motivators":
+          topMotivator.textContent = e.path[0].textContent
 
           // show text box of instructions
           break;
         default:
-          selectedDrivers.push(e.path[0].textContent);
-          renderTop12Drivers()
+          selectedMotivators.push(e.path[0].textContent);
+          renderTop12Motivators()
       }
 
     } else {
       selectedCards[parseInt(e.path[2].dataset.group)] --;
 
       switch(e.path[2].id) {
-        case "selected-drivers":
-          topDrivers.splice(topDrivers.indexOf(e.path[0].textContent), 1)
-          renderTop6Drivers()
+        case "selected-motivators":
+          topMotivators.splice(topMotivators.indexOf(e.path[0].textContent), 1)
+          renderTop6Motivators()
           break;
-        case "top-drivers":
-          topDriver.textContent = ""
+        case "top-motivators":
+          topMotivator.textContent = ""
           // show text box of instructions
           break;
         default:
-        selectedDrivers.splice(selectedDrivers.indexOf(e.path[0].textContent), 1)
-        renderTop12Drivers()
+        selectedMotivators.splice(selectedMotivators.indexOf(e.path[0].textContent), 1)
+        renderTop12Motivators()
         
       }
 

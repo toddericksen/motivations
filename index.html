@@ -33,315 +33,392 @@
   <style type="text/css">
     @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap');
 
-html {
-  font-size:  17px;
-}
-body {
-  /*background: #ECECF7;*/
-  /*background: #882288;*/
-  background:  #24044E;
-  /*background: #fff;*/
-  text-align: center;
-  font-family: "Spartan";
-  letter-spacing: -0.025rem;
-  color: #24044E;
-}
+    html {
+      font-size:  17px;
+    }
+    body {
+      /*background: #ECECF7;*/
+      /*background: #882288;*/
+      background:  #24044E;
+      /*background: #fff;*/
+      text-align: center;
+      font-family: "Spartan";
+      letter-spacing: -0.025rem;
+      color: #24044E;
+    }
 
-#campfire_logo {
-  position: absolute; 
-  bottom: 15px; 
-  left: 15px;
-}
+    #campfire_logo {
+      position: absolute; 
+      bottom: 15px; 
+      left: 15px;
+    }
 
-p {line-height: 1.5;}
+    p {line-height: 1.5;}
 
-span.description {
-  text-transform: uppercase;
-  letter-spacing: .05rem;
-  font-size:  .75rem;
-  font-weight:  600;
-}
-#stage {
-  position: fixed;
-  height: calc(100vh - 48px);
-  width:  calc(100vw - 48px);
-  top:  24px;
-  left:  24px;
-  border-radius:  13px;
-  background: rgba(255,255,255, .95);
-  box-shadow: 0 3px 20px rgba(0,0,0,.125);
-  overflow:  hidden;
-}
+    span.description {
+      text-transform: uppercase;
+      letter-spacing: .05rem;
+      font-size:  .75rem;
+      font-weight:  600;
+    }
+    #stage {
+      position: fixed;
+      height: calc(100vh - 48px);
+      width:  calc(100vw - 48px);
+      top:  24px;
+      left:  24px;
+      border-radius:  13px;
+      background: rgba(255,255,255, .95);
+      box-shadow: 0 3px 20px rgba(0,0,0,.125);
+      overflow:  hidden;
+    }
 
-.scene {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+    .scene {
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
-.scene.intro {
-  background: url('sunrise.png') no-repeat 50% 50%;
-  background-size: cover;
-}
+    .scene.intro {
+      background: url('sunrise.png') no-repeat 50% 50%;
+      background-size: cover;
+    }
 
-.section {
-  border: none;
-  border-radius: 11px;
-  width: calc(100% - 4rem);
-  max-width:  850px;
-}
+    .section {
+      border: none;
+      border-radius: 11px;
+      width: calc(100% - 4rem);
+      max-width:  850px;
+    }
 
-.final .section {
-  max-width:  1111px;
-}
-
-
-h1 {
-  font-size:3.5rem;
-  font-weight: 800;
-  letter-spacing: -.125rem;
-}
-
-h2 {
-  padding: 0 3rem;
-  font-size: 1.75rem;
-  font-weight: 600;
-  letter-spacing: -.075rem;
-}
-
-strong {
-  font-weight:  800;
-}
-
-.intro h1 {
-  margin-bottom: 0rem;
-}
-
-.intro p {
-  /*color: rgba(38, 47, 86, .75) ;*/
-  margin:  .5rem auto 3rem;
-  font-size:  1rem;
-  font-weight:  400;
-  width:  100%;
-  max-width:  650px;
-}
-
-.intro p strong {
-  font-size: 1.25rem;
-  font-weight: 400;
-  color:  rgba(0,0,0,.75);
-}
-
-.cards {
-  /*display: flex;*/
-  /*flex-flow: row wrap;*/
-  /*justify-content: space-evenly;*/
-  /*align-content: center;*/
-  margin: 1rem auto;
-  width: 100%;
-/*  max-width: 960px;*/
-}
-
-.card {
-  perspective: 500px;
-  will-change: transform;
-  transform-style: preserve-3d;
-  position: relative;
-  width: 250px;
-  height: 100px;
-  display: inline-block;
-  margin: .75rem;
-  font-weight:  500;
-}
-
-.card .front, .card .back {
-  background: rgba(255,255,255,.8);
-  border-radius: 9px;
-  border: 2px solid rgba(255,255,255,.8);
-  /*border: 2px solid rgba(84,42,0220,.2);*/
-  flex-flow: column nowrap;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.012), 0 2px 6px rgba(0,0,0,0.2) ;
-  transition: all .25s cubic-bezier(.25,.8,.25,1);
-  
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
-  display: flex;
-  backface-visibility: hidden;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
+    .final .section {
+      max-width:  1111px;
+    }
 
 
-.card .front {
-  transform: rotateY(0deg);
-}
+    h1 {
+      font-size:3.5rem;
+      font-weight: 800;
+      letter-spacing: -.125rem;
+    }
+
+    h2 {
+      padding: 0 3rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -.075rem;
+    }
+
+    strong {
+      font-weight:  800;
+    }
+
+    .intro h1 {
+      margin-bottom: 0rem;
+    }
+
+    .intro p {
+      /*color: rgba(38, 47, 86, .75) ;*/
+      margin:  .5rem auto 3rem;
+      font-size:  1rem;
+      font-weight:  400;
+      width:  100%;
+      max-width:  650px;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .intro p strong {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color:  rgba(0,0,0,.75);
+    }
+
+    .cards {
+      /*display: flex;*/
+      /*flex-flow: row wrap;*/
+      /*justify-content: space-evenly;*/
+      /*align-content: center;*/
+      margin: 1rem auto;
+      width: 100%;
+    /*  max-width: 960px;*/
+    }
+
+    .card {
+      perspective: 500px;
+      will-change: transform;
+      transform-style: preserve-3d;
+      position: relative;
+      width: 250px;
+      height: 100px;
+      display: inline-block;
+      margin: .75rem;
+      font-weight:  500;
+    }
+
+    .card .front, .card .back {
+      background: rgba(255,255,255,.8);
+      border-radius: 9px;
+      border: 2px solid rgba(255,255,255,.8);
+      /*border: 2px solid rgba(84,42,0220,.2);*/
+      flex-flow: column nowrap;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.012), 0 2px 6px rgba(0,0,0,0.2) ;
+      transition: all .25s cubic-bezier(.25,.8,.25,1);
+      
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      display: flex;
+      backface-visibility: hidden;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
 
 
-.card .back {
-  transform: rotateY(-180deg);
-  /*background: #542ADC;*/
-  /*background:  #6A3DC5;*/
-  /*background:  #FBBE55;*/
-  background: #24044E;
-  color: #fff;
-}
-
-.card.is_flipped .back {
-  font-weight: 700;
-  letter-spacing: -0.0125rem;
-  transform: rotateY(0deg) translateZ(40px); 
-  box-shadow: 0 2px 6px 4px rgba(0,0,0,.1), 0 0px 8px -4px rgba(0,0,0,0.5);
-}
-
-.card.is_flipped .front {
-  transform: rotateY(180deg);
-}
-
-.card .front:hover, .card .back:hover {
-  cursor: pointer;
-  box-shadow: 0 12px 18px -4px rgba(0,0,0,0.12), 0 2px 10px rgba(0,0,0,0.24);
-  font-size:  1.05rem;
-}
+    .card .front {
+      transform: rotateY(0deg);
+    }
 
 
-button {
-  cursor:  pointer;
-  background: #24044E;
-  color:  #fff;
-  border:  none;
-  font-family: "Spartan";
-  padding:  1.25rem 2rem 1rem 2rem;
-  border: 2px solid rgba(0,0,0,.25);
-  border-radius: 7px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: .1rem;
-  box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
-  transition: all .25s cubic-bezier(.25,.8,.25,1);
-}
+    .card .back {
+      transform: rotateY(-180deg);
+      /*background: #542ADC;*/
+      /*background:  #6A3DC5;*/
+      /*background:  #FBBE55;*/
+      background: #24044E;
+      color: #fff;
+    }
 
-button:hover {
-  box-shadow: 0 12px 18px -4px rgba(0,0,0,0.12), 0 2px 10px rgba(0,0,0,0.24);
-  transform: translateY(-3px);
-}
-a.back_button {
-  position: absolute;
-  left: 50px;
-  top: 50px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #24044E;
-  font-size: .75rem;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-  background: url(chevron.svg) no-repeat 1.35rem 45%;
-  background-size: 24px;
-  height: 12px;
-  padding: .5rem 1.5rem .5rem 3rem;
-  display: flex;
-  width: 56px;
-  height: 32px;
-  text-align: left;
-  flex-flow: column nowrap;
-  justify-content: center;
-  border-radius: 5px;
-}
+    .card.is_flipped .back {
+      font-weight: 700;
+      letter-spacing: -0.0125rem;
+      transform: rotateY(0deg) translateZ(40px); 
+      box-shadow: 0 2px 6px 4px rgba(0,0,0,.1), 0 0px 8px -4px rgba(0,0,0,0.5);
+    }
 
-.shake_it_up {
-  animation: shake .3s forwards ease-in-out;
-}
+    .card.is_flipped .front {
+      transform: rotateY(180deg);
+    }
 
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-10px);
-  }
-  40% {
-    transform: translateX(10px);
-  }
-  60% {
-    transform: translateX(-10px);
-  }
-  80% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);  
-  }
-}
+    .card .front:hover, .card .back:hover {
+      cursor: pointer;
+      box-shadow: 0 12px 18px -4px rgba(0,0,0,0.12), 0 2px 10px rgba(0,0,0,0.24);
+      font-size:  1.05rem;
+    }
 
-@media all and (max-width: 767px) {
-  html {
-    font-size: 16px;
-  }
 
-  h1 {
-    font-size: 2.5rem;
-    line-height: 1;
-  }
+    button {
+      cursor:  pointer;
+      background: #24044E;
+      color:  #fff;
+      border:  none;
+      font-family: "Spartan";
+      padding:  1.25rem 2rem 1rem 2rem;
+      border: 2px solid rgba(0,0,0,.25);
+      border-radius: 7px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .1rem;
+      box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
+      transition: all .25s cubic-bezier(.25,.8,.25,1);
+    }
 
-  h2 {
-    font-size: 1.3rem;
-  }
+    button:hover {
+      box-shadow: 0 12px 18px -4px rgba(0,0,0,0.12), 0 2px 10px rgba(0,0,0,0.24);
+      transform: translateY(-3px);
+    }
+    a.back_button {
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #24044E;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+      background: url(chevron.svg) no-repeat 1.35rem 45%;
+      background-size: 24px;
+      height: 12px;
+      padding: .5rem 1.5rem .5rem 3rem;
+      display: flex;
+      width: 56px;
+      height: 32px;
+      text-align: left;
+      flex-flow: column nowrap;
+      justify-content: center;
+      border-radius: 5px;
+    }
 
-  #stage {
-    height: 100vh;
-    width:  100vw;
-    top:  0;
-    left:  0;
-    border-radius: 0;
-  }
+    .shake_it_up {
+      animation: shake .3s forwards ease-in-out;
+    }
 
-  .scene.intro {
-    justify-content: center;
-  }
+    #progress {
+      top:  0;
+      display: flex;
+      width:  calc(100% - 8rem);
+      margin:  50px auto 0;
+      position: relative;
+      z-index: 2;
+    }
 
-  .scene {
-    justify-content: flex-start;
-  }
+    .step {
+      width: 100%;
+      background-color: rgba(0,0,0,.1);
+      margin-right: 2px;
+      height: 4px;
+    }
 
-  .section {
-    padding:  4rem 0;
-  }
+    .step:first-child {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+      }
 
-  .card {
-    perspective: 500px;
-    will-change: transform;
-    transform-style: preserve-3d;
-    position: relative;
-    width: 100%;
-    height: 60px;
-    margin:  0;
-  }
-  a.back_button {
-    left: 15px;
-    top: 20px;
-  }
-  .intro p {
-    font-size:  1rem;
-  }
-}
+    .step:last-child {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+
+    .step.done {
+      background: rgba(36, 4, 78, .75);
+      /*background: #EFA2AC;*/
+    }
+
+    textarea {
+      font-family:  'Spartan';
+      font-size:  1.2rem;
+      padding:  2rem;
+      border: 2px solid rgba(0,0,0,.25);
+      border-radius: 7px;
+      font-weight: 400;
+      letter-spacing: -.05rem;
+      box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
+      transition: all .25s cubic-bezier(.25,.8,.25,1);
+      width:  100%;
+      max-width: 600px;
+      min-height:  200px;
+    }
+
+    textarea:focus {
+      border:  1px solid blue;
+      outline:  none;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(-10px);
+      }
+      40% {
+        transform: translateX(10px);
+      }
+      60% {
+        transform: translateX(-10px);
+      }
+      80% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);  
+      }
+    }
+
+    @media all and (max-width: 767px) {
+      html {
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      #stage {
+        height: 100vh;
+        width:  100vw;
+        top:  0;
+        left:  0;
+        border-radius: 0;
+      }
+
+      .scene.intro {
+        justify-content: center;
+      }
+
+      .scene {
+        justify-content: flex-start;
+      }
+
+      .section {
+        padding:  4rem 0;
+      }
+
+      .card {
+        perspective: 500px;
+        will-change: transform;
+        transform-style: preserve-3d;
+        position: relative;
+        width: 100%;
+        height: 60px;
+        margin:  0;
+      }
+      a.back_button {
+        left: 15px;
+        top: 20px;
+      }
+      .intro p {
+        font-size:  1rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <div id="progress">
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step "></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+  </div>
   <div id="stage">
     <div class="scene intro">
       <div class="section">
         <img src="campfire-logo.svg" id="campfire_logo" />
         <h1>Motivation Assessment</h1>
         <p><strong>When our work aligns with our motivations, we feel more fulfillment and satisfaction. Use this assessment to understand what drives you. </strong> 
-</p>  <span class="description">Directions</span>
-        <p> Select the two words that motivate you the most in each section. From your selections, choose your six core motivators.</p>
+        </p>  
         <button>Get Started</button>
+      </div>
+    </div>
+
+    
+        
+    <div class="scene">
+      <a href="#back" class="back_button">Back</a>
+      <div class="section">
+        <h2 class="description">Directions</h2>
+        <p> Select the two words that are most motivating to you in each section. </p>  
+        <p>From your selections, choose your six core motivators.</p>
+        <p>Finally choose one to focus on.</p>
+        
+        <button>Let's do this</button>
       </div>
     </div>
     <div class="scene">
@@ -366,12 +443,12 @@ a.back_button {
             <div class="back">Autonomy</div>
           </div>
           <div class="card">
-            <div class="front">Taking risks</div>
-            <div class="back">Taking risks</div>
+            <div class="front">Taking Risks</div>
+            <div class="back">Taking Risks</div>
           </div>
           <div class="card">
-            <div class="front">Feeling empowered</div>
-            <div class="back">Feeling empowered</div>
+            <div class="front">Feeling Empowered</div>
+            <div class="back">Feeling Empowered</div>
           </div>
           <div class="card">
             <div class="front">Freedom</div>
@@ -419,11 +496,11 @@ a.back_button {
         <div class="back">Achievement</div>
       </div>
       <div class="card">
-        <div class="front">Personal development</div>
-        <div class="back">Personal development</div>
+        <div class="front">Personal Development</div>
+        <div class="back">Personal Development</div>
       </div>
       <div class="card">
-        <div class="front">Skill building</div>
+        <div class="front">Skill Building</div>
         <div class="back">Skill building</div>
       </div>
       <div class="card">
@@ -464,16 +541,16 @@ a.back_button {
           <div class="back">Results</div>
         </div>
         <div class="card">
-          <div class="front">Problem solving</div>
-          <div class="back">Problem solving</div>
+          <div class="front">Problem Solving</div>
+          <div class="back">Problem Solving</div>
         </div>
         <div class="card">
           <div class="front">Role</div>
           <div class="back">Role</div>
         </div>
         <div class="card">
-          <div class="front">Knowledge + expertise</div>
-          <div class="back">Knowledge + expertise</div>
+          <div class="front">Knowledge &amp; Expertise</div>
+          <div class="back">Knowledge &amp; Expertise</div>
         </div>
       </div>
       <button>Next</button>
@@ -485,16 +562,16 @@ a.back_button {
       <h2>Select the two that motivate you most</h2>
       <div class="cards" data-group="3" data-limit="2">
         <div class="card">
-          <div class="front">Job title</div>
-          <div class="back">Job title</div>
+          <div class="front">Job Title</div>
+          <div class="back">Job Title</div>
         </div>
         <div class="card">
           <div class="front">Respect</div>
           <div class="back">Respect</div>
         </div>
         <div class="card">
-          <div class="front">Work-life balance</div>
-          <div class="back">Work-life balance</div>
+          <div class="front">Work-life Balance</div>
+          <div class="back">Work-life Balance</div>
         </div>
         <div class="card">
           <div class="front">Support</div>
@@ -509,12 +586,12 @@ a.back_button {
           <div class="back">Recognition</div>
         </div>
         <div class="card">
-          <div class="front">Feeling valued</div>
-          <div class="back">Feeling valued</div>
+          <div class="front">Feeling Valued</div>
+          <div class="back">Feeling Valued</div>
         </div>
         <div class="card">
-          <div class="front">Money + rewards</div>
-          <div class="back">Money + rewards</div>
+          <div class="front">Money &amp; Rewards</div>
+          <div class="back">Money &amp; Rewards</div>
         </div>
         <div class="card">
           <div class="front">Benefits</div>
@@ -550,8 +627,8 @@ a.back_button {
           <div class="back">Trust</div>
         </div>
         <div class="card">
-          <div class="front">Helping others</div>
-          <div class="back">Helping others</div>
+          <div class="front">Helping Others</div>
+          <div class="back">Helping Others</div>
         </div>
         <div class="card">
           <div class="front">Inclusion</div>
@@ -614,23 +691,48 @@ a.back_button {
       <button>Next</button>
     </div>
     </div>
-    <div class="scene final">
+    <div class="scene final-six">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Now, choose your <strong>six</strong> core motivators.</h2>
+        <h2>Next, choose your <strong>six</strong> core motivators.</h2>
         <div id="selected-drivers" class="cards" data-group="6" data-limit="6">
           
         </div>
+        <button>Next</button>
     </div>
-    <button>Finish</button>
+    
   </div>
+  <div class="scene focus-driver">
+      <a href="#back" class="back_button">Back</a>
+      <div class="section">
+        <h2>Now choose <strong>one</strong> motivation to focus on.</h2>
+        <div class="cards" id="top-drivers" data-group="7" data-limit="1">
+          
+        </div>
+        <button>Next</button>
+    </div>
   </div>
+  <div class="scene">
+      <a href="#back" class="back_button">Back</a>
+      <div class="section">
+        <h2>Describe having <strong id="focusDriverText"></strong> fulfilled for you. What does that look like?</h2>
+        <textarea></textarea>
+    </div>
+    <button>Save my Answers</button>
+  </div>
+</div>
   <script type="text/javascript">
-    var cards = document.querySelectorAll('.card');
+var cards = document.querySelectorAll('.card');
 var buttons = document.querySelectorAll('button');
 var backButtons = document.querySelectorAll('.back_button');
 
+var steps = document.querySelectorAll('.step');
+var steps_count = 0;
+var progress = document.getElementById('progress')
+
 var selectedDriversDiv = document.getElementById("selected-drivers")
+var topDriversDiv = document.getElementById("top-drivers")
+
 var selectedCards = {
   0: 0,
   1: 0,
@@ -639,10 +741,13 @@ var selectedCards = {
   4: 0,
   5: 0,
   6: 0,
+  7: 0
 }
 
 var selectedDrivers = []
+var topDrivers = []
 
+var topDriver = document.getElementById("focusDriverText");
 
 function randoRgb() {
   var string = "rgb(";
@@ -652,10 +757,21 @@ function randoRgb() {
   return string;
 }
 
+function updateStep(direction) {
+  if (direction == "next") {
+    progress.children[steps_count].classList.add("done")
+  } else {
+    progress.children[steps_count - 1].classList.remove("done")
+  }
+
+}
+
 function nextScene(e) {
+  // console.log(e)
   var nextScene = e.path[2].nextElementSibling
-  // console.log("next scene", nextScene)
   nextScene.scrollIntoView({ behavior: 'smooth' });
+  updateStep("next")
+  steps_count ++
 }
 
 function previousScene(e) {
@@ -663,10 +779,12 @@ function previousScene(e) {
   var previousScene = e.path[1].previousElementSibling
   // console.log("next scene", prevScene)
   previousScene.scrollIntoView({ behavior: 'smooth' });
+  updateStep("prev");
+  steps_count --
 }
 
 
-function renderDrivers() {
+function renderTop12Drivers() {
   selectedDriversDiv.innerHTML = "";
 
   selectedDrivers.forEach(function(value, index){
@@ -685,28 +803,73 @@ function renderDrivers() {
   })
 }
 
+function renderTop6Drivers() {
+  topDriversDiv.innerHTML = "";
+
+  topDrivers.forEach(function(value, index){
+    const cardDiv = document.createElement("div")
+    cardDiv.className = "card";
+    const frontDiv = document.createElement("div")
+    frontDiv.className = "front";
+    const backDiv = document.createElement("div")
+    backDiv.className = "back";
+    frontDiv.appendChild(document.createTextNode(value));
+    backDiv.appendChild(document.createTextNode(value));
+    cardDiv.appendChild(frontDiv)
+    cardDiv.appendChild(backDiv)
+    topDriversDiv.appendChild(cardDiv)
+    cardDiv.addEventListener( "click", cardSelected)
+  })
+}
+
 function cardSelected(e) {
   // console.log(e.path)
 
   if (selectedCards[parseInt(e.path[2].dataset.group)] < parseInt(e.path[2].dataset.limit) || e.path[1].classList.contains("is_flipped")) {
-    e.path[1].classList.toggle("is_flipped");
+    
+    e.path[1].classList.toggle("is_flipped"); // flip the card
 
+    // if it's flipped to the back
     if (e.path[1].classList.contains("is_flipped")) {
-      selectedCards[parseInt(e.path[2].dataset.group)] ++;
-      selectedDrivers.push(e.path[0].textContent);
 
-      if (e.path[2].id != "selected-drivers") {
-        renderDrivers()
+      // up the number of selected cards for the group
+      selectedCards[parseInt(e.path[2].dataset.group)] ++;
+
+      // decide what to do based on the id of the cards div
+      switch(e.path[2].id) {
+        case "selected-drivers":
+          topDrivers.push(e.path[0].textContent); // put the selection in the top6 array
+          renderTop6Drivers();
+          // render the top Drivers
+          break;
+        case "top-drivers":
+          topDriver.textContent = e.path[0].textContent
+
+          // show text box of instructions
+          break;
+        default:
+          selectedDrivers.push(e.path[0].textContent);
+          renderTop12Drivers()
       }
 
     } else {
-      selectedDrivers.splice(selectedDrivers.indexOf(e.path[0].textContent), 1)
-      // console.log(selectedDrivers)
       selectedCards[parseInt(e.path[2].dataset.group)] --;
-      
-      if (e.path[2].id != "selected-drivers") {
-        renderDrivers()
+
+      switch(e.path[2].id) {
+        case "selected-drivers":
+          topDrivers.splice(topDrivers.indexOf(e.path[0].textContent), 1)
+          renderTop6Drivers()
+          break;
+        case "top-drivers":
+          topDriver.textContent = ""
+          // show text box of instructions
+          break;
+        default:
+        selectedDrivers.splice(selectedDrivers.indexOf(e.path[0].textContent), 1)
+        renderTop12Drivers()
+        
       }
+
     }
     
   } else {

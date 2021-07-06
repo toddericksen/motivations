@@ -263,14 +263,14 @@
       top:  0;
       display: flex;
       width:  calc(100% - 8rem);
-      margin:  50px auto 0;
+      margin:  10px auto 0;
       position: relative;
       z-index: 2;
     }
 
     .step {
       width: 100%;
-      background-color: rgba(0,0,0,.1);
+      background-color: rgba(255,255,255,.25);
       margin-right: 2px;
       height: 4px;
     }
@@ -287,6 +287,7 @@
 
     .step.done {
       background: rgba(36, 4, 78, .75);
+      background:  rgba(255,255,255,.85);;
       /*background: #EFA2AC;*/
     }
 
@@ -306,8 +307,21 @@
     }
 
     textarea:focus {
-      border:  1px solid blue;
+      border:  2px solid #24044E;
       outline:  none;
+      box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
+    }
+
+    ol {
+      text-align: left;
+      width:  100%;
+      max-width:  500px;
+      margin:  2rem auto 4rem;
+    }
+
+    ol li {
+      margin-bottom:  1rem;
+      line-height: 1.6;
     }
 
     @keyframes shake {
@@ -407,17 +421,16 @@
         <button>Get Started</button>
       </div>
     </div>
-
-    
-        
     <div class="scene">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
         <h2 class="description">Directions</h2>
-        <p> Select the two words that are most motivating to you in each section. </p>  
-        <p>From your selections, choose your six core motivators.</p>
-        <p>Finally choose one to focus on.</p>
-        
+        <p>Narrow down your list of motivators to one that you want to work on.</p>
+        <ol>
+          <li>Begin by selecting two words from each section that are most motivating.</li>
+          <li>From your selections, choose your six core motivators.</li>
+          <li>Finally choose one to focus on. Describe having it fulfilled.</li>
+        </ol>
         <button>Let's do this</button>
       </div>
     </div>
@@ -694,7 +707,7 @@
     <div class="scene final-six">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Next, choose your <strong>six</strong> core motivators.</h2>
+        <h2>Narrow it down to your <strong>six</strong> core motivations</h2>
         <div id="selected-drivers" class="cards" data-group="6" data-limit="6">
           
         </div>
@@ -705,7 +718,7 @@
   <div class="scene focus-driver">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Now choose <strong>one</strong> motivation to focus on.</h2>
+        <h2>Choose <strong>one</strong> motivation to focus on improving</h2>
         <div class="cards" id="top-drivers" data-group="7" data-limit="1">
           
         </div>
@@ -715,10 +728,12 @@
   <div class="scene">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Describe having <strong id="focusDriverText"></strong> fulfilled for you. What does that look like?</h2>
+        <h2>Describe <strong id="focusDriverText"></strong> being more fulfilled in your life. What would that look like?</h2>
         <textarea></textarea>
     </div>
-    <button>Save my Answers</button>
+    <p>
+      <button>Save my Answers</button>
+    </p>
   </div>
 </div>
   <script type="text/javascript">

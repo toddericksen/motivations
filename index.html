@@ -35,6 +35,7 @@
 
     html {
       font-size:  17px;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -617,6 +618,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="step"></div>
     <div class="step"></div>
     <div class="step"></div>
+    <div class="step"></div>
   </div>
   <div id="stage">
     <div class="scene intro">
@@ -955,11 +957,11 @@ iteration-count | direction | fill-mode | play-state | name */
   <div class="scene">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Describe <strong id="focusMotivatorText"></strong> being more fulfilled in your life. What would that look like?</h2>
-        <textarea></textarea>
+        <h2>Describe <strong class="focusMotivatorText"></strong> being more fulfilled in your life. What would that look like?</h2>
+        <textarea id="focusMotivatorDescription"></textarea>
     </div>
     <p>
-      <button>View Results</button>
+      <button id="results">View Results</button>
     </p>
   </div>
   <div class="scene results">
@@ -969,22 +971,16 @@ iteration-count | direction | fill-mode | play-state | name */
           
           <div id="focus_motivator">
             <span class="description">Focus Motivator</span>
-            <h2>Creativity</h2>
-            <div class="focus_description">
-              <p>
+            <h2 class="focusMotivatorText"></h2>
+            <div class="focus_description" id="focusMotivatorDescriptionDiv">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+              
             </div>
           </div>
 
           <span class="description">Core Motivators</span>
           <div id="finished_motivators">
-            <div class="motivator">asdgh jhsagdj</div>
-            <div class="motivator">asdgh jhsagdj</div>
-            <div class="motivator">asdgh jhsagdj</div>
-            <div class="motivator">asdgh jhsagdj</div>
-            <div class="motivator">asdgh jhsagdj</div>
-            <div class="motivator">asdgh jhsagdj</div>
+            
           </div>
         </div>
     </div>
@@ -992,6 +988,7 @@ iteration-count | direction | fill-mode | play-state | name */
 
 </div>
   <script type="text/javascript">
+    var stage = document.getElementById("stage")
     var cards = document.querySelectorAll('.card');
     var buttons = document.querySelectorAll('button');
     var backButtons = document.querySelectorAll('.back_button');
@@ -1000,9 +997,12 @@ iteration-count | direction | fill-mode | play-state | name */
     var progress = document.getElementById('progress')
     var selectedMotivatorsDiv = document.getElementById("selected-motivators")
     var topMotivatorsDiv = document.getElementById("top-motivators")
+    var finishedMotivatorsDiv = document.getElementById("finished_motivators")
     var selectedMotivators = []
     var topMotivators = []
-    var topMotivator = document.getElementById("focusMotivatorText");
+    var focusMotivator = document.querySelectorAll(".focusMotivatorText");
+    var focusMotivatorDescription = document.getElementById("focusMotivatorDescription");
+    var focusMotivatorDescriptionDiv = document.getElementById("focusMotivatorDescriptionDiv")
     var demoDiv = document.getElementById("finger-tap");
     var selectedCards = {
       0: 0,
@@ -1033,15 +1033,22 @@ iteration-count | direction | fill-mode | play-state | name */
     }
 
     function nextScene(e) {
-      // console.log(e)
       var nextScene = e.path[2].nextElementSibling
       nextScene.scrollIntoView({ behavior: 'smooth' });
+      switch(e.path[0].id) {
+        case "to_demo":
+          demoDiv.classList.add("animate")
+          break;
+        case "results":
+          focusMotivatorDescriptionDiv.textContent = focusMotivatorDescription.value
+          break;
+        default:
+      }
+
       updateStep("next")
       steps_count ++
-      console.log(e.path)
-      if (e.path[0].id == "to_demo") {
-        demoDiv.classList.add("animate");
-      }
+      // console.log(e.path)
+
     }
 
     function previousScene(e) {
@@ -1049,10 +1056,21 @@ iteration-count | direction | fill-mode | play-state | name */
       var previousScene = e.path[1].previousElementSibling
       // console.log("next scene", prevScene)
       previousScene.scrollIntoView({ behavior: 'smooth' });
+      
       updateStep("prev");
       steps_count --
     }
 
+    function renderFinishedMotivators() {
+        finishedMotivatorsDiv.innerHTML = "";
+        topMotivators.forEach(function(value, index){
+          const cardDiv = document.createElement("div")
+          cardDiv.className = "motivator";
+          cardDiv.appendChild(document.createTextNode(value));
+          finishedMotivatorsDiv.appendChild(cardDiv)
+        })
+        
+    }
 
     function renderTop12Motivators() {
       selectedMotivatorsDiv.innerHTML = "";
@@ -1100,16 +1118,19 @@ iteration-count | direction | fill-mode | play-state | name */
           selectedCards[parseInt(e.path[2].dataset.group)] ++;
           // decide what to do based on the id of the cards div
           switch(e.path[2].id) {
-            // case "demo":
-            //   break;
+            case "demo":
+              break;
             case "selected-motivators":
               topMotivators.push(e.path[0].textContent); // put the selection in the top6 array
               renderTop6Motivators();
               // render the top Motivators
               break;
             case "top-motivators":
-              topMotivator.textContent = e.path[0].textContent
-              // show text box of instructions
+
+              focusMotivator.forEach(function(value, index){
+                value.textContent = e.path[0].textContent
+              })
+              renderFinishedMotivators()
               break;
             default:
               selectedMotivators.push(e.path[0].textContent);
@@ -1118,15 +1139,17 @@ iteration-count | direction | fill-mode | play-state | name */
         } else {
           selectedCards[parseInt(e.path[2].dataset.group)] --;
           switch(e.path[2].id) {
-            // case "demo":
-            //   break;
+            case "demo":
+              break;
             case "selected-motivators":
               topMotivators.splice(topMotivators.indexOf(e.path[0].textContent), 1)
               renderTop6Motivators()
               break;
             case "top-motivators":
-              topMotivator.textContent = ""
-              // show text box of instructions
+              focusMotivator.forEach(function(value, index){
+                value.textContent = e.path[0].textContent
+              })
+              renderFinishedMotivators()
               break;
             default:
               selectedMotivators.splice(selectedMotivators.indexOf(e.path[0].textContent), 1)

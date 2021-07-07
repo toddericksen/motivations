@@ -947,7 +947,7 @@ iteration-count | direction | fill-mode | play-state | name */
   <div class="scene focus-motivator">
       <a href="#back" class="back_button">Back</a>
       <div class="section">
-        <h2>Choose <strong>one</strong> motivation to focus on improving</h2>
+        <h2>Choose <strong>one</strong> motivation to focus on</h2>
         <div class="cards" id="top-motivators" data-group="8" data-limit="1">
           
         </div>
@@ -1037,7 +1037,7 @@ iteration-count | direction | fill-mode | play-state | name */
       nextScene.scrollIntoView({ behavior: 'smooth' });
       switch(e.path[0].id) {
         case "to_demo":
-          demoDiv.classList.add("animate")
+          demoDiv.classList.add("animate") // animate the instructions
           break;
         case "results":
           focusMotivatorDescriptionDiv.textContent = focusMotivatorDescription.value

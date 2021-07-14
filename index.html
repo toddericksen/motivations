@@ -30,12 +30,15 @@
     <meta property="og:site_name" content="Campfire" />
 
   <title>Campfire Career Assessments - Motivations</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
   <style type="text/css">
     @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap');
 
     html {
       font-size:  17px;
-      scroll-behavior: smooth;
     }
 
     body {
@@ -88,11 +91,11 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      background:  #fff;
+      background:  #F6F6FC;
     }
 
     .scene.intro {
-      background: url('sunrise.png') no-repeat 50% 50%;
+      background: url('sunrise.svg') no-repeat 50% 50%;
       background-size: cover;
       width:  102%;
       height:  102%;
@@ -153,20 +156,21 @@
       /*flex-flow: row wrap;*/
       /*justify-content: space-evenly;*/
       /*align-content: center;*/
-      margin: 1rem auto;
+      margin: 1rem auto 2rem;
       width: 100%;
     /*  max-width: 960px;*/
     }
 
     .card {
       perspective: 500px;
+      -webkit-perspective: 500px;
       will-change: transform;
       transform-style: preserve-3d;
       position: relative;
       width: 250px;
-      height: 75px;
+      height: 80px;
       display: inline-block;
-      margin: .66rem;
+      margin: .625rem;
       font-size:  .9rem;
       font-weight:  400;
     }
@@ -184,13 +188,16 @@
       border: 2px solid rgba(255,255,255,.8);
       /*border: 2px solid rgba(84,42,0220,.2);*/
       flex-flow: column nowrap;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.012), 0 2px 6px rgba(0,0,0,0.2) ;
+      box-shadow: 2px 2px 10px rgba(36, 4, 78, .1), 0 2px 6px rgba(36, 4, 78, .1) ;
       transition: all .25s cubic-bezier(.25,.8,.25,1);
       
       width: calc(100% - 8px);
       height: calc(100% - 8px);
       display: flex;
-      backface-visibility: hidden;
+      backface-visibility: hidden; 
+      -webkit-backface-visibility: hidden;
+      
+
       position: absolute;
       align-items: center;
       justify-content: center;
@@ -200,11 +207,13 @@
 
     .card .front {
       transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
     }
 
 
     .card .back {
       transform: rotateY(-180deg);
+      -webkit-transform: rotateY(-180deg);
       /*background: #542ADC;*/
       /*background:  #6A3DC5;*/
       /*background:  #FBBE55;*/
@@ -215,12 +224,14 @@
     .card.is_flipped .back {
       font-weight: 700;
       letter-spacing: -0.0125rem;
-      transform: rotateY(0deg) translateZ(40px); 
-      box-shadow: 0 2px 6px 4px rgba(0,0,0,.1), 0 0px 8px -4px rgba(0,0,0,0.5);
+      transform: rotateY(0deg) translateZ(40px);
+      -webkit-transform: rotateY(0deg) translateZ(40px); 
+      box-shadow: 0 8px 12px 0px rgba(36, 4, 78,.25), 0 0px 8px -4px rgba(36, 4, 78,0.5);
     }
 
     .card.is_flipped .front {
       transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
     }
 
     .card .front:hover, .card .back:hover {
@@ -230,24 +241,28 @@
     }
 
 
-    button {
+    a.button {
       cursor:  pointer;
       background: #24044E;
-      color:  #fff;
       border:  none;
+      color:  #fff;
+      text-decoration: none;
       font-family: "Spartan";
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .1rem;
       padding:  1.25rem 2rem 1rem 2rem;
       border: 2px solid rgba(0,0,0,.25);
       border-radius: 7px;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: .1rem;
+      display:inline-block;
+      transform: translateY(0px);
       box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
       transition: all .25s cubic-bezier(.25,.8,.25,1);
     }
 
-    button:hover {
-      box-shadow: 0 12px 18px -4px rgba(0,0,0,0.12), 0 2px 10px rgba(0,0,0,0.24);
+    a.button:hover {
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, .65), 0 18px 18px -5px rgba(0,0,0,0.15), 0 2px 10px rgba(0,0,0,0.24);
       transform: translateY(-3px);
     }
     a.back_button {
@@ -577,6 +592,7 @@ iteration-count | direction | fill-mode | play-state | name */
 
       .card {
         perspective: 500px;
+        -webkit-perspective: 500px;
         will-change: transform;
         transform-style: preserve-3d;
         position: relative;
@@ -616,13 +632,13 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="step"></div>
   </div>
   <div id="stage">
-    <div class="scene intro">
+    <div class="scene intro" id="0">
       <div class="section">
         <a href="https://getcampfire.com"><img src="campfire-logo.svg" id="campfire_logo" /></a>
         <h1>Discover your motivators</h1>
         <p>Motivators are the "why" behind what you do. This activity will help you identify and prioritize the motivators in your life and career. You'll identify one focus motivator reflect on what it means to you. 
         </p>  
-        <button id="to_demo">Get Started</button>
+        <a class="button" href="#1">Get Started</a>
       </div>
     </div>
     <!-- <div class="scene">
@@ -660,8 +676,8 @@ iteration-count | direction | fill-mode | play-state | name */
         <button>Let's do this</button>
       </div>
     </div> -->
-    <div class="scene">
-      <a href="#back" class="back_button">Back</a>
+    <div class="scene" id="1">
+      <a href="#0" class="back_button">Back</a>
       <div class="section">
         <h2>Which <strong>two</strong> best describe what you want most?</h2>
         <div class="cards" data-group="1" data-limit="2">
@@ -702,11 +718,11 @@ iteration-count | direction | fill-mode | play-state | name */
             <div class="back">Adventure</div>
           </div>
         </div>
-        <button>Next</button>
+        <p><a class="button" href="#2">Next</a></p>
       </div>
   </div>
-    <div class="scene">
-      <a href="#back" class="back_button">Back</a>
+    <div class="scene" id="2">
+      <a href="#1" class="back_button">Back</a>
     <div class="section">
       <h2>Which <strong>two</strong> best describe what you want most?</h2>
     <div class="cards" data-group="2" data-limit="2">
@@ -747,11 +763,11 @@ iteration-count | direction | fill-mode | play-state | name */
         <div class="back">Learning</div>
       </div>
     </div>
-    <button>Next</button>
+    <p><a class="button" href="#3">Next</a></p>
     </div>
   </div>
-    <div class="scene">
-      <a href="#back" class="back_button">Back</a>
+    <div class="scene" id="3">
+      <a href="#2" class="back_button">Back</a>
     <div class="section">
       <h2>Which <strong>two</strong> best describe what you want most?</h2>
       <div class="cards" data-group="3" data-limit="2">
@@ -792,11 +808,11 @@ iteration-count | direction | fill-mode | play-state | name */
           <div class="back">Knowledge &amp; Expertise</div>
         </div>
       </div>
-      <button>Next</button>
+      <p><a class="button" href="#4">Next</a></p>
     </div>
     </div>
-    <div class="scene">
-      <a href="#back" class="back_button">Back</a>
+    <div class="scene" id="4">
+      <a href="#3" class="back_button">Back</a>
     <div class="section">
       <h2>Which <strong>two</strong> best describe what you want most?</h2>
       <div class="cards" data-group="4" data-limit="2">
@@ -837,11 +853,11 @@ iteration-count | direction | fill-mode | play-state | name */
           <div class="back">Benefits</div>
         </div>
       </div>
-      <button>Next</button>
+      <p><a class="button" href="#5">Next</a></p>
     </div>
     </div>
-    <div class="scene">
-      <a href="#back" class="back_button">Back</a>
+    <div class="scene" id="5">
+      <a href="#4" class="back_button">Back</a>
     <div class="section">
       <h2>Which <strong>two</strong> best describe what you want most?</h2>
       <div class="cards" data-group="5" data-limit="2">
@@ -882,11 +898,11 @@ iteration-count | direction | fill-mode | play-state | name */
           <div class="back">Teammates</div>
         </div>
       </div>
-      <button>Next</button>
+      <p><a class="button" href="#6">Next</a></p>
     </div>
     </div>
-    <div class="scene">
-      <a href="#back" class="back_button">Back</a>
+    <div class="scene" id="6">
+      <a href="#5" class="back_button">Back</a>
     <div class="section">
       <h2>Which <strong>two</strong> best describe what you want most?</h2>
       <div class="cards"  data-group="6" data-limit="2">
@@ -927,32 +943,32 @@ iteration-count | direction | fill-mode | play-state | name */
           <div class="back">Vision</div>
         </div>
       </div>
-      <button>Next</button>
+      <p><a class="button" href="#7">Next</a></p>
     </div>
     </div>
-    <div class="scene final-six">
-      <a href="#back" class="back_button">Back</a>
+    <div class="scene final-six" id="7">
+      <a href="#6" class="back_button">Back</a>
       <div class="section">
         <h2>Which <strong>SIX</strong> best describe what you want most?</h2>
         <div id="selected-motivators" class="cards" data-group="7" data-limit="6">
           
         </div>
-        <button>Next</button>
+        <p><a class="button" href="#8">Next</a></p>
     </div>
     
   </div>
-  <div class="scene focus-motivator">
-      <a href="#back" class="back_button">Back</a>
+  <div class="scene focus-motivator" id="8">
+      <a href="#7" class="back_button">Back</a>
       <div class="section">
         <h2>Choose the <strong>ONE</strong> you want most</h2>
         <div class="cards" id="top-motivators" data-group="8" data-limit="1">
           
         </div>
-        <button>Next</button>
+        <p><a class="button" href="#9">Next</a></p>
     </div>
   </div>
-  <div class="scene">
-      <a href="#back" class="back_button">Back</a>
+  <div class="scene" id="9">
+      <a href="#8" class="back_button">Back</a>
       <div class="section">
         <p class="intro">What does <strong class="focusMotivatorText"></strong> mean to you?</p>
         <textarea id="focusMotivatorDefinition"></textarea>
@@ -962,11 +978,11 @@ iteration-count | direction | fill-mode | play-state | name */
 
     </div>
     <p>
-      <button id="results">View Results</button>
+      <a href="#10" id="results" class="button">View Results</a>
     </p>
   </div>
-  <div class="scene results">
-      <a href="#back" class="back_button">Back</a>
+  <div class="scene results" id="10">
+      <a href="#9" class="back_button">Back</a>
       <div class="section">
         <div id="report">
           
@@ -993,16 +1009,18 @@ iteration-count | direction | fill-mode | play-state | name */
   <script type="text/javascript">
     var stage = document.getElementById("stage")
     var cards = document.querySelectorAll('.card');
-    var buttons = document.querySelectorAll('button');
+    var buttons = document.querySelectorAll('.button');
     var backButtons = document.querySelectorAll('.back_button');
     var steps = document.querySelectorAll('.step');
     var steps_count = 0;
+    var scrollPosition = 0;
     var progress = document.getElementById('progress')
     var selectedMotivatorsDiv = document.getElementById("selected-motivators")
     var topMotivatorsDiv = document.getElementById("top-motivators")
     var finishedMotivatorsDiv = document.getElementById("finished_motivators")
     var selectedMotivators = []
     var topMotivators = []
+    var focusMotivators = []
     var focusMotivator = document.querySelectorAll(".focusMotivatorText");
     
     var focusMotivatorDefinition = document.getElementById("focusMotivatorDefinition");
@@ -1025,6 +1043,22 @@ iteration-count | direction | fill-mode | play-state | name */
       8: 0
     }
 
+    function collectionHas(a, b) { //helper function (see below)
+      for(var i = 0, len = a.length; i < len; i ++) {
+          if(a[i] == b) return true;
+      }
+      return false;
+    }
+
+    function findParentBySelector(elm, selector) {
+      var all = document.querySelectorAll(selector);
+      var cur = elm.parentNode;
+      while(cur && !collectionHas(all, cur)) { //keep going up until you find a match
+          cur = cur.parentNode; //go up
+      }
+      return cur; //will return null if not found
+    }
+
     function randoRgb() {
       var string = "rgb(";
       string += Math.round(Math.random() * 200) + ",";
@@ -1042,9 +1076,10 @@ iteration-count | direction | fill-mode | play-state | name */
     }
 
     function nextScene(e) {
-      var nextScene = e.path[2].nextElementSibling
-      nextScene.scrollIntoView({ behavior: 'smooth' });
-      switch(e.path[0].id) {
+      let current_scene = findParentBySelector(e.target, '.scene')
+      var nextSceneDiv = current_scene.nextElementSibling
+      
+      switch(e.target.id) {
         case "to_demo":
           demoDiv.classList.add("animate") // animate the instructions
           break;
@@ -1056,17 +1091,27 @@ iteration-count | direction | fill-mode | play-state | name */
       }
 
       updateStep("next")
-      steps_count ++
+      steps_count ++;
+      scrollPosition += $(current_scene).height()
+      e.preventDefault();
+      $(stage).animate({
+          scrollTop: scrollPosition
+        })
+
     }
 
     function previousScene(e) {
-      // console.log(e.path)
-      var previousScene = e.path[1].previousElementSibling
-      // console.log("next scene", prevScene)
-      previousScene.scrollIntoView({ behavior: 'smooth' });
+      let current_scene = findParentBySelector(e.target, '.scene')
+      var previousScene = current_scene.previousElementSibling
       
       updateStep("prev");
       steps_count --
+
+      scrollPosition -= $(current_scene).height()
+      e.preventDefault();
+      $(stage).animate({
+          scrollTop: scrollPosition
+        })
     }
 
     function renderFinishedMotivators() {
@@ -1118,58 +1163,73 @@ iteration-count | direction | fill-mode | play-state | name */
     }
 
     function cardSelected(e) {
-      if (selectedCards[parseInt(e.path[2].dataset.group)] < parseInt(e.path[2].dataset.limit) || e.path[1].classList.contains("is_flipped")) {
-        e.path[1].classList.toggle("is_flipped"); // flip the card
+
+      let cards = findParentBySelector(e.target, ".cards");
+      let card = findParentBySelector(e.target, ".card");
+
+      let group_count = selectedCards[parseInt(cards.dataset.group)];
+      let group_limit = parseInt(cards.dataset.limit);
+      
+
+      if ((group_count < group_limit ) || card.classList.contains("is_flipped")) {
+        card.classList.toggle("is_flipped"); // flip the card
         // if it's flipped to the back
-        if (e.path[1].classList.contains("is_flipped")) {
+        if (card.classList.contains("is_flipped")) {
           // up the number of selected cards for the group
-          selectedCards[parseInt(e.path[2].dataset.group)] ++;
+          selectedCards[parseInt(cards.dataset.group)] ++;
           // decide what to do based on the id of the cards div
-          switch(e.path[2].id) {
+          switch(cards.id) {
             case "demo":
               break;
             case "selected-motivators":
-              topMotivators.push(e.path[0].textContent); // put the selection in the top6 array
+              topMotivators.push(e.target.textContent); // put the selection in the top6 array
               renderTop6Motivators();
+              focusMotivators.pop();
+              selectedCards[8] = 0;
               // render the top Motivators
               break;
             case "top-motivators":
+              focusMotivators.push(e.target.textContent)
 
               focusMotivator.forEach(function(value, index){
-                value.textContent = e.path[0].textContent
+                value.textContent = e.target.textContent
               })
               renderFinishedMotivators()
               break;
             default:
-              selectedMotivators.push(e.path[0].textContent);
+              selectedMotivators.push(e.target.textContent);
               renderTop12Motivators()
           }
         } else {
-          selectedCards[parseInt(e.path[2].dataset.group)] --;
-          switch(e.path[2].id) {
+          selectedCards[parseInt(cards.dataset.group)] --;
+          switch(cards.id) {
             case "demo":
               break;
             case "selected-motivators":
-              topMotivators.splice(topMotivators.indexOf(e.path[0].textContent), 1)
+              topMotivators.splice(topMotivators.indexOf(e.target.textContent), 1)
+              focusMotivators.pop();
+              selectedCards[8] = 0;
               renderTop6Motivators()
               break;
             case "top-motivators":
+              focusMotivators.splice(focusMotivators.indexOf(e.target.textContent), 1)
+
               focusMotivator.forEach(function(value, index){
-                value.textContent = e.path[0].textContent
+                value.textContent = e.target.textContent
               })
               renderFinishedMotivators()
               break;
             default:
-              selectedMotivators.splice(selectedMotivators.indexOf(e.path[0].textContent), 1)
+              selectedMotivators.splice(selectedMotivators.indexOf(e.target.textContent), 1)
               renderTop12Motivators()
           }
         }
       } else {
-        e.path[1].classList.add("shake_it_up");
+        card.classList.add("shake_it_up");
         setTimeout(removeShake, 500)
       }
       function removeShake(){
-        e.path[1].classList.remove("shake_it_up")
+        card.classList.remove("shake_it_up")
       }
     }
 
@@ -1184,6 +1244,7 @@ iteration-count | direction | fill-mode | play-state | name */
     for(var i = 0; i < backButtons.length; i++) {
       backButtons[i].addEventListener( "click", previousScene)
     }
+
   </script>
 </body>
 </html>

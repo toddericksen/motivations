@@ -558,16 +558,25 @@ iteration-count | direction | fill-mode | play-state | name */
 
     @media all and (max-width: 767px) {
       html {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 1;
+        padding:  0;
       }
 
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+          padding: 0;
+      }
+
+      #campfire_logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width:  50%;
       }
 
       #stage {
@@ -588,6 +597,7 @@ iteration-count | direction | fill-mode | play-state | name */
 
       .section {
         padding:  4rem 0;
+        width: calc(100% - 3rem);
       }
 
       .card {
@@ -597,12 +607,14 @@ iteration-count | direction | fill-mode | play-state | name */
         transform-style: preserve-3d;
         position: relative;
         width: 100%;
-        height: 60px;
+        height: 50px;
         margin:  0;
+        font-size:  .75rem;
+
       }
       a.back_button {
-        left: 15px;
-        top: 20px;
+        left: 0;
+        top: 10px;
       }
       .intro p {
         font-size:  1rem;
@@ -614,6 +626,14 @@ iteration-count | direction | fill-mode | play-state | name */
 
       .step.done {
         background: rgba(36, 4, 78, .75);
+      }
+
+      #progress {
+        width:  100%;
+        top:  -10px;
+      }
+      textarea {
+        max-width: 85%;
       }
     }
   </style>

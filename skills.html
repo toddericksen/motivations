@@ -1148,8 +1148,9 @@ iteration-count | direction | fill-mode | play-state | name */
     var timer =  duration, minutes, seconds;
     var progress_bar = document.querySelector("#timer svg path")
     progress_bar.style.animationDuration = duration+'s';
+    progress_bar.style.animationDelay = '2s';
 
-      setInterval(function () {
+    var go = setInterval(function () {
           minutes = parseInt(timer / 60, 10);
           seconds = parseInt(timer % 60, 10);
 
@@ -1159,7 +1160,7 @@ iteration-count | direction | fill-mode | play-state | name */
           timer_display.textContent = minutes + ":" + seconds;
 
           if (--timer < 0) {
-              alert("times up!");
+              clearInterval(go);
           }
       }, 1000);
     }

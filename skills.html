@@ -913,6 +913,7 @@ iteration-count | direction | fill-mode | play-state | name */
 
 
       <div id="skill_method_description">
+        <p id="method_prompt"></p>
         <textarea id="skill_description" placeholder="Write what you will do"></textarea>
       </div>
       
@@ -942,6 +943,8 @@ iteration-count | direction | fill-mode | play-state | name */
                 '"focus_activity": {"name": "","skills": []},'+
                 '"focus_skill": {"name": "", "method": "","description": ""}}';
     let plan = JSON.parse(text);
+
+    var methodPrompt = document.getElementById("method_prompt")
 
     new_skill.addEventListener("keydown", function(e) {
       if (e.keyCode == 13 && new_skill.value != "") {
@@ -1226,9 +1229,27 @@ iteration-count | direction | fill-mode | play-state | name */
       document.querySelectorAll(".method_option").forEach(function(option, index){
         option.classList.remove("selected")
       })
+
       method.classList.add("selected")
 
+      switch(method.children[1].textContent) {
+        case "Person":
+          methodPrompt.textContent = "Who is the best person to help you with this? What will you do with them?";
+          break;
+        case "Project":
+          methodPrompt.textContent = "What project could you do that would stretch you to learn this skill?";
+          break;
+        case "Playbook":
+          methodPrompt.textContent = "What book, course, conference or other resource would help you build this skill?"
+          break;
+        default: 
+      }
+
+     
+
       document.getElementById("skill_method_description").classList.add("visible")
+
+      
     }
 
 

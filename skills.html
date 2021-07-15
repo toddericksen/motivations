@@ -763,6 +763,49 @@ iteration-count | direction | fill-mode | play-state | name */
         max-width: 85%;
       }
     }
+    #timer {
+      position: absolute;
+      bottom:  12px;
+      left: 2rem;
+      width:  calc(100% - 2rem);
+      z-index: 3;
+      text-align: left;
+    }
+
+    #timer svg {
+      width:  calc(100% - 110px);
+      position: relative;
+      left:  94px;
+      bottom:  -5px;
+    }
+
+    #timer svg path {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 0;
+      animation: dash 30s linear forwards;
+      animation-duration: 300s;
+    }
+    #timer #current_time {
+      position: absolute;
+      bottom: 12px;
+      color: #fff;
+      padding: 1.5rem 0 1.3rem 0;
+      border-radius: 0 12px;
+      background: #6A3DC5;
+      display: block;
+      margin: 0 0 0 .4rem;
+      font-weight: 600;
+      letter-spacing: 0.025rem;
+      left: -0.9rem;
+      width: 110px;
+      text-align: center;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset:100;
+      }
+    }
   </style>
 </head>
 <body>
@@ -775,6 +818,14 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="step"></div>
     <div class="step"></div>
   </div>
+
+  <div id="timer">
+    <div id="current_time">05:00</div>
+    <svg viewBox="0 0 100 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.5 1H99.5" stroke="#6A3DC5" stroke-width="0.75" stroke-linecap="round"/>
+    </svg>
+  </div>
+
   <div id="stage">
     <div class="scene intro" id="0">
       <div class="section">
@@ -782,7 +833,7 @@ iteration-count | direction | fill-mode | play-state | name */
         <h1>Do more of what you love</h1>
         <p>Intro text
         </p>  
-        <a class="button" href="#1">Get Started</a>
+        <a id="start" class="button" href="#1">Get Started</a>
       </div>
     </div>
     <!-- <div class="scene">
@@ -1076,7 +1127,7 @@ iteration-count | direction | fill-mode | play-state | name */
     var steps_count = 0;
     var scrollPosition = 0;
     var progress = document.getElementById('progress')
-    
+    var timer_display = document.querySelector('#current_time');
 
     var demoDiv = document.getElementById("finger-tap");
     
@@ -1090,6 +1141,27 @@ iteration-count | direction | fill-mode | play-state | name */
       6: 0,
       7: 0,
       8: 0
+    }
+
+
+    function startTimer(duration) {
+    var timer =  duration, minutes, seconds;
+    var progress_bar = document.querySelector("#timer svg path")
+    progress_bar.style.animationDuration = duration+'s';
+
+      setInterval(function () {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          timer_display.textContent = minutes + ":" + seconds;
+
+          if (--timer < 0) {
+              alert("times up!");
+          }
+      }, 1000);
     }
 
     function collectionHas(a, b) { //helper function (see below)
@@ -1121,8 +1193,8 @@ iteration-count | direction | fill-mode | play-state | name */
       var nextSceneDiv = current_scene.nextElementSibling
       
       switch(e.target.id) {
-        case "to_demo":
-          demoDiv.classList.add("animate") // animate the instructions
+        case "start":
+          startTimer(300)
           break;
         case "results":
           focusMotivatorDefinitionDiv.textContent = focusMotivatorDefinition.value

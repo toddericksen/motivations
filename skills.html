@@ -444,7 +444,7 @@ ssdddd
       margin-bottom:  2rem;
     }
 
-    #focus_motivator h2 {
+    #focus_motivator h2, #focus_skill h2{
       font-size:  2.75rem;
       font-weight:  800;
       line-height: .75;
@@ -950,8 +950,8 @@ iteration-count | direction | fill-mode | play-state | name */
     </div>
     </div>
     
-  <div class="scene" id="9">
-      <a href="#8" class="back_button">Back</a>
+  <div class="scene" id="6">
+      <a href="#5" class="back_button">Back</a>
       <div class="section">
         <h2>In order to do more of <strong class="focus-activity-text">designing user interfaces</strong>, I need to develop <strong class="focus-skill-text">more frequent user research</strong>.</h2>
         <p>There are three main waits to develop skills—People, Projects, and Playbooks.</p>
@@ -983,9 +983,29 @@ iteration-count | direction | fill-mode | play-state | name */
 
       </div>
     <p>
-      <a href="#10" id="results" class="button">View Results</a>
+      <a href="#7" id="results" class="button">View Results</a>
     </p>
   </div>
+  <div class="scene" id="7">
+      <a href="#6" class="back_button">Back</a>
+    <div class="section">
+      <div id="report">
+          
+          <div id="focus_skill">
+            <span class="description">Focus Skill</span>
+            <h2 class="focus-skill-text"></h2>
+            
+            <p id="focusSkillSummaryText">
+              In order to do more of <strong class="focus-activity-text">designing user interfaces</strong>, I need to develop <strong class="focus-skill-text">more frequent user research</strong> through a <strong id="focus-skill-method"></strong>.
+            </p>
+
+            <p id="focusMethodDescription">
+              
+            </p>
+            
+          </div>
+        </div>
+    </div>
   </div>
 
 </div>
@@ -1002,6 +1022,9 @@ iteration-count | direction | fill-mode | play-state | name */
     var focusActivityTextDiv = document.querySelectorAll(".focus-activity-text")
     var skillMethodButtons = document.querySelectorAll(".methods > div")
     var svgPath = document.getElementById("svgPath")
+    var focusSkillMethod = document.getElementById("focus-skill-method")
+    var skill_description = document.getElementById("skill_description")
+    var focusMethodDescription = document.getElementById("focusMethodDescription")
     let text = '{"all_activities": [],' +
                 '"energizing_activities": [],'+
                 '"focus_activity": {"name": "","skills": []},'+
@@ -1231,8 +1254,9 @@ iteration-count | direction | fill-mode | play-state | name */
           startTimer(300)
           break;
         case "results":
-          focusMotivatorDefinitionDiv.textContent = focusMotivatorDefinition.value
-          focusMotivatorWhyDiv.textContent = focusMotivatorWhy.value
+          plan.focus_skill.description = skill_description.value
+          focusMethodDescription.textContent = plan.focus_skill.description;
+          focusSkillMethod.textContent = plan.focus_skill.method
           break;
         default:
       }
@@ -1346,11 +1370,9 @@ iteration-count | direction | fill-mode | play-state | name */
         default: 
       }
 
-     
-
+      plan.focus_skill.method = method.children[1].textContent
       document.getElementById("skill_method_description").classList.add("visible")
 
-      
     }
 
 

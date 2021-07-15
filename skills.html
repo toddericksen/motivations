@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="https://www.getcampfire.com/images/favicon.ico">
+  <meta name="description"
+      content="Do more of what you love. Find the skills you need and make a plan for groing them." />
+    <meta name="keywords" content="manager training, digital peer coaching,leadership development, " />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:site:id" content="">
+    <meta name="twitter:title" content="Activities to Skills" />
+    <meta name="twitter:description" content="Do more of what you love. Find the skills you need and make a plan for groing them.">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:creator:id" content="">
+
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="preview-campfire-skills.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Activities to Skills" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="preview-campfire-skills.png" />
+    <meta property="og:url" content="https://toddericksen.github.io/activities" />
+    <meta property="og:description" content="Do more of what you love. Find the skills you need and make a plan for groing them." />
+    <meta property="og:site_name" content="Campfire" />
+
+  <title>Campfire Career Assessments - Skills</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap');
+ssdddd
+    html {
+      font-size:  17px;
+    }
+
+    body {
+      background:  #24044E;
+      /*background: #fff;*/
+      text-align: center;
+      font-family: "Spartan";
+      letter-spacing: -0.025rem;
+      color: #24044E;
+    }
+
+    #campfire_logo {
+      position: absolute; 
+      top: 25px; 
+      left: 20px;
+    }
+
+    p {line-height: 1.5;}
+
+    p.help-text {
+      opacity:  .7;
+      font-size:  .875rem;
+    }
+
+    span.description {
+      text-transform: uppercase;
+      letter-spacing: .05rem;
+      font-size:  .75rem;
+      font-weight:  600;
+    }
+
+    #stage {
+      position: fixed;
+      height: calc(100vh - 48px);
+      width:  calc(100vw - 48px);
+      top:  24px;
+      left:  24px;
+      border-radius:  13px;
+      background: rgba(255,255,255, .95);
+      box-shadow: 0 3px 20px rgba(0,0,0,.125);
+      overflow:  hidden;
+    }
+
+    .scene {
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background:  #F6F6FC;
+    }
+
+    .scene.intro {
+      background: url('sunrise.svg') no-repeat 50% 50%;
+      background-size: cover;
+      width:  102%;
+      height:  102%;
+    }
+
+    .section {
+      border: none;
+      border-radius: 11px;
+      width: calc(100% - 4rem);
+      max-width:  850px;
+    }
+
+    .final .section {
+      max-width:  1111px;
+    }
+
+
+    h1 {
+      font-size:3.5rem;
+      font-weight: 800;
+      letter-spacing: -.175rem;
+    }
+
+    h2 {
+      padding: 0 3rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -.075rem;
+      line-height: 1.33;
+    }
+
+    strong {
+      font-weight:  800;
+    }
+
+    .intro h1 {
+      margin-bottom: .5rem;
+    }
+
+    .intro p {
+      /*color: rgba(38, 47, 86, .75) ;*/
+      margin:  .5rem auto 3rem;
+      font-size:  1rem;
+      font-weight:  400;
+      width:  100%;
+      max-width:  650px;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .intro p strong {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color:  rgba(0,0,0,.75);
+    }
+
+    .list {
+      display: flex;
+      flex-flow: row wrap;
+
+    }
+    
+    .form input[type=text] {
+      width: 100%;
+      max-width:  400px;
+      margin: 0 auto;
+      display: block;
+      font-family: "Spartan", sans-serif;
+      font-size:  17px;
+      letter-spacing: -0.025rem;
+      padding:  .75rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.6);
+      border-radius: 5px;
+    }
+    
+    .list_item {
+      width: 100%;
+      max-width:400px;
+      height: 60px;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 8.23625px rgba(0, 0, 0, 0.15), 0px 2.74542px 2.74542px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+      border: 2px solid rgba(255,255,255,.8);
+      box-shadow: 2px 2px 10px rgba(36, 4, 78, .1), 0 2px 6px rgba(36, 4, 78, .1) ;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: .5rem;
+    }
+    .list_item .text {
+      text-align: left;
+      margin-left:  1.25rem;
+      max-width:  calc(100% - 4rem);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .list_item .remove {
+      border-radius: 5px;
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+      background: #fff url('remove.svg') no-repeat 50% 50%;
+      background-size: 1rem;
+      margin-right:  .5rem;
+    }
+
+    .list_item .remove:hover {
+      background-color: #f0f0f0;
+      background-image: url('remove-hover.svg');
+    }
+
+    .cards {
+      /*display: flex;*/
+      /*flex-flow: row wrap;*/
+      /*justify-content: space-evenly;*/
+      /*align-content: center;*/
+      margin: 1rem auto 2rem;
+      width: 100%;
+    /*  max-width: 960px;*/
+    }
+
+    .card {
+      perspective: 500px;
+      -webkit-perspective: 500px;
+      will-change: transform;
+      transform-style: preserve-3d;
+      position: relative;
+      width: 250px;
+      height: 80px;
+      display: inline-block;
+      margin: .625rem;
+      font-size:  .9rem;
+      font-weight:  400;
+    }
+
+    #demo .card {
+      width: 150px;
+      height: 75px;
+      margin: .5rem;
+    }
+
+    
+    .card .front, .card .back {
+      background: rgba(255,255,255,.8);
+      border-radius: 9px;
+      border: 2px solid rgba(255,255,255,.8);
+      /*border: 2px solid rgba(84,42,0220,.2);*/
+      flex-flow: column nowrap;
+      box-shadow: 2px 2px 10px rgba(36, 4, 78, .1), 0 2px 6px rgba(36, 4, 78, .1) ;
+      transition: all .25s cubic-bezier(.25,.8,.25,1);
+      
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      display: flex;
+      backface-visibility: hidden; 
+      -webkit-backface-visibility: hidden;
+      
+
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+
+    .card .front {
+      transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
+    }
+
+
+    .card .back {
+      transform: rotateY(-180deg);
+      -webkit-transform: rotateY(-180deg);
+      /*background: #542ADC;*/
+      /*background:  #6A3DC5;*/
+      /*background:  #FBBE55;*/
+      background: #24044E;
+      color: #fff;
+    }
+
+    .card.is_flipped .back {
+      font-weight: 700;
+      letter-spacing: -0.0125rem;
+      transform: rotateY(0deg) translateZ(40px);
+      -webkit-transform: rotateY(0deg) translateZ(40px); 
+      box-shadow: 0 8px 12px 0px rgba(36, 4, 78,.25), 0 0px 8px -4px rgba(36, 4, 78,0.5);
+    }
+
+    .card.is_flipped .front {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+    }
+
+    .card .front:hover, .card .back:hover {
+      cursor: pointer;
+      box-shadow: 0 12px 18px -4px rgba(0,0,0,0.12), 0 2px 10px rgba(0,0,0,0.24);
+      font-size:  .95rem;
+    }
+
+
+    a.button {
+      cursor:  pointer;
+      background: #24044E;
+      border:  none;
+      color:  #fff;
+      text-decoration: none;
+      font-family: "Spartan";
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .1rem;
+      padding:  1.25rem 2rem 1rem 2rem;
+      border: 2px solid rgba(0,0,0,.25);
+      border-radius: 7px;
+      display:inline-block;
+      transform: translateY(0px);
+      box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
+      transition: all .25s cubic-bezier(.25,.8,.25,1);
+    }
+
+    a.button:hover {
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, .65), 0 18px 18px -5px rgba(0,0,0,0.15), 0 2px 10px rgba(0,0,0,0.24);
+      transform: translateY(-3px);
+    }
+    a.back_button {
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #24044E;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+      background: url(chevron.svg) no-repeat 1.35rem 45%;
+      background-size: 24px;
+      height: 12px;
+      padding: .5rem 1.5rem .5rem 3rem;
+      display: flex;
+      width: 56px;
+      height: 32px;
+      text-align: left;
+      flex-flow: column nowrap;
+      justify-content: center;
+      border-radius: 5px;
+    }
+
+    .shake_it_up {
+      animation: shake .3s forwards cubic-bezier(.25,.8,.25,1) !important;
+    }
+
+    #progress {
+      top:  0;
+      display: flex;
+      width:  calc(100% - 8rem);
+      margin:  10px auto 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step {
+      width: 100%;
+      background-color: rgba(255,255,255,.25);
+      margin-right: 2px;
+      height: 4px;
+    }
+
+    .step:first-child {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+      }
+
+    .step:last-child {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+
+    .step.done {
+      background: rgba(36, 4, 78, .75);
+      background:  rgba(255,255,255,.85);;
+      /*background: #EFA2AC;*/
+    }
+
+    textarea {
+      font-family:  'Spartan';
+      font-size:  1.2rem;
+      padding:  1.5rem;
+      border: 2px solid rgba(0,0,0,.25);
+      border-radius: 7px;
+      font-weight: 400;
+      letter-spacing: -.05rem;
+      box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
+      transition: all .25s cubic-bezier(.25,.8,.25,1);
+      width:  100%;
+      max-width: 600px;
+      min-height:  100px;
+      line-height: 1.5;
+    }
+
+    textarea:focus {
+      border:  2px solid #24044E;
+      outline:  none;
+      box-shadow:  0 0 0 3px rgba(255, 255, 255, .25);
+    }
+
+    ol {
+      text-align: left;
+      width:  100%;
+      max-width:  500px;
+      margin:  2rem auto 4rem;
+    }
+
+    ol li {
+      margin-bottom:  1rem;
+      line-height: 1.6;
+    }
+
+    .results .section {
+      width:  100%;
+      max-width:  960px;
+      margin:  0 auto;
+    }
+
+    /*#report {
+      display: flex;
+      flex-flow: row no-wrap;
+      justify-content: center;
+      align-items:  flex-start;
+    }*/
+
+    #finished_motivators {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content:  center;
+      justify-items: space-around;
+      align-items: space-around;
+      margin-top: 1rem;
+    }
+    
+    #focus_motivator {
+      margin-bottom:  2rem;
+    }
+
+    #focus_motivator h2 {
+      font-size:  2.75rem;
+      font-weight:  800;
+      line-height: .75;
+    }
+
+    .focus_description {
+      margin-bottom:  3rem;
+    }
+
+    .motivator {
+      border:  1px solid #ccc;
+      padding:  2rem;
+      display:  inline-block;
+      margin:  .5rem;
+      border-radius:  5px;
+      width: 200px;
+    }
+
+    #finger-tap {
+      position:  relative;
+      margin-bottom:  2rem;
+    }
+
+    #finger-tap #pointer {
+      position: absolute;
+      bottom:  -20px;
+      left:  50%;
+      transform: translateX(-170px) scale(1);
+      z-index:  1;
+    }
+
+    #finger-tap.animate .cards .card:nth-child(1){
+      /* @keyframes duration | easing-function | delay |
+iteration-count | direction | fill-mode | play-state | name */
+      animation:  spin-demo-1 3s cubic-bezier(.25,.8,.25,1) 2s; 
+    }
+
+    #finger-tap.animate .cards .card:nth-child(2){
+      animation: spin-demo-2 3s cubic-bezier(.25,.8,.25,1) 2s; 
+    }
+
+    #finger-tap.animate .cards .card:nth-child(3){
+      animation:  shake-demo 3s cubic-bezier(.25,.8,.25,1) 2s;
+    }
+
+    #finger-tap.animate #pointer {
+      animation:  taps 3s cubic-bezier(.25,.8,.25,1) 2s forwards;
+    }
+
+    .methods {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      justify-items: center;
+      margin:  0 0 2rem 0;
+    }
+
+    .methods div {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      border:  1px solid transparent;
+      border-radius: 7px;
+      cursor: pointer;
+      padding: 0 2rem 1rem 2rem;
+    }
+
+    .methods div:hover {
+      /*border-color: #24044E;*/
+      background:  #fff;
+      box-shadow: 2px 2px 10px rgba(36, 4, 78, .1), 0 2px 6px rgba(36, 4, 78, .1) ;
+    }
+
+    .methods div.selected {
+      border-color: #24044E;
+      background:  #fff;
+      box-shadow: 2px 4px 14px rgba(36, 4, 78, .1), 0 2px 6px rgba(36, 4, 78, .1) ;
+      transform: translateY(-3px);
+    }
+
+    .methods div:hover i, .methods div.selected i {
+      background-color: #F4F2F6;
+    }
+
+    .methods div i {
+      height: 5rem;
+      border-radius: 100px;
+      width: 5rem;
+      margin: 1rem 0;
+      background: #fff 50% 50% no-repeat;
+      background-size: 36px;
+    }
+
+
+
+    .methods div span {
+      text-transform: uppercase;
+      font-size: .75rem;
+      letter-spacing: .05rem;
+      font-weight: 600;
+    }
+
+    .methods div.person i {
+      background-image:  url('skill_person.svg');
+    }
+    .methods div.project i {
+      background-image:  url('skill_project.svg');
+    }
+    .methods div.playbook i {
+      background-image:  url('skill_playbook.svg');
+    }
+
+    #skill_method_description {
+      display:  none;
+    }
+
+    .visible, #skill_method_description.visible {
+      display: block;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(-10px);
+      }
+      40% {
+        transform: translateX(10px);
+      }
+      60% {
+        transform: translateX(-10px);
+      }
+      80% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);  
+      }
+    }
+
+    @keyframes shake-demo {
+      70% {
+        transform: translateX(0);
+      }
+      73% {
+        transform: translateX(-10px);
+      }
+      76% {
+        transform: translateX(10px);
+      }
+      79% {
+        transform: translateX(-10px);
+      }
+      82% {
+        transform: translateX(10px);
+      }
+      85% {
+        transform: translateX(0);  
+      }
+    }
+
+    @keyframes spin-demo-1 {
+      6% {
+        transform: rotateY(0);
+      }
+      33% {
+        transform: rotateY(-180deg);
+      }
+      84% {
+        transform: rotateY(-180deg);
+      }
+      95% {
+        transform: rotateY(0);  
+      }
+    }
+
+    @keyframes spin-demo-2 {
+      36% {
+        transform: rotateY(0);
+      }
+      63% {
+        transform: rotateY(-180deg);
+      }
+      84% {
+        transform: rotateY(-180deg);
+      }
+      95% {
+        transform: rotateY(0);  
+      }
+    }
+
+    @keyframes taps {
+      0% {
+        opacity:  1;
+        transform: translateX(-170px) scale(1);
+      }
+      10% {
+        opacity:  1;
+        transform: translateX(-170px) scale(.8);
+      }
+      20% {
+        opacity:  1;
+        transform: translateX(-170px) scale(1);
+      }
+      30% {
+        opacity:  1;
+        transform: translateX(0px) scale(1);
+      }
+      40% {
+        opacity:  1;
+        transform: translateX(0px) scale(.8);
+      }
+      50% {
+        opacity:  1;
+        transform: translateX(0px) scale(1);
+      }
+      60% {
+        opacity:  1;
+        transform: translateX(180px) scale(1);
+      }
+      70% {
+        opacity:  1;
+        transform: translateX(180px) scale(.8);
+      }
+      80% {
+        opacity:  1;
+        transform: translateX(180px) scale(1);
+      }
+      90% {
+        opacity:  0;
+        transform: translateX(-170px) scale(1);
+      }
+      100% {
+        opacity:  0;
+        transform: translateX(-170px) scale(1);
+      }
+      
+    }
+
+    @media all and (max-width: 767px) {
+      html {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1;
+        padding:  0;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+          padding: 0;
+      }
+
+      #campfire_logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width:  50%;
+      }
+
+      #stage {
+        height: 100vh;
+        width:  100vw;
+        top:  0;
+        left:  0;
+        border-radius: 0;
+      }
+
+      .scene.intro {
+        justify-content: center;
+      }
+
+      .scene {
+        justify-content: flex-start;
+      }
+
+      .section {
+        padding:  4rem 0;
+        width: calc(100% - 3rem);
+      }
+
+      .card {
+        perspective: 500px;
+        -webkit-perspective: 500px;
+        will-change: transform;
+        transform-style: preserve-3d;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin:  0;
+        font-size:  .75rem;
+
+      }
+      a.back_button {
+        left: 0;
+        top: 10px;
+      }
+      .intro p {
+        font-size:  1rem;
+      }
+
+      .step {
+        background-color: rgba(0,0,0,.25);
+      }
+
+      .step.done {
+        background: rgba(36, 4, 78, .75);
+      }
+
+      #progress {
+        width:  100%;
+        top:  -10px;
+      }
+      textarea {
+        max-width: 85%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress">
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step "></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+  </div>
+  <div id="stage">
+    <div class="scene intro" id="0">
+      <div class="section">
+        <a href="https://getcampfire.com"><img src="campfire-logo.svg" id="campfire_logo" /></a>
+        <h1>Do more of what you love</h1>
+        <p>Intro text
+        </p>  
+        <a class="button" href="#1">Get Started</a>
+      </div>
+    </div>
+    <!-- <div class="scene">
+      <a href="#back" class="back_button">Back</a>
+      <div class="section">
+        <h2 class="description">Directions</h2>
+        <p class="intro">Motivator: something that provides a reason to do something.
+</p>
+        <p class="intro">This is an exercise designed to help you understand the things that motivate you at work. By the end of the exercise you will have at least one motivator focus on.</p>
+        <ol>
+          <li><strong>Choose two from each section</strong> that are most motivating.</li>
+          <li>From your previous selections, <strong>choose six</strong> core motivators.</li>
+          <li>Finally <strong>choose one</strong> to focus on. Describe having it fulfilled.</li>
+        </ol>
+
+        <p class="help-text">Cards will shake if you select more than the limit. Unselect one of your cards to choose another. </p>
+        <div id="finger-tap">
+          <img id="pointer" src="pointer.svg">
+          <div id="demo" class="cards" data-group="0" data-limit="2">
+            <div class="card">
+              <div class="front">Card One</div>
+              <div class="back">Card One</div>
+            </div>
+            <div class="card">
+              <div class="front">Card Two</div>
+              <div class="back">Card Two</div>
+            </div>
+            <div class="card">
+              <div class="front">Card Three</div>
+              <div class="back">Card Three</div>
+            </div>
+          </div>
+        </div>
+
+        <button>Let's do this</button>
+      </div>
+    </div> -->
+    <div class="scene" id="1">
+      <a href="#0" class="back_button">Back</a>
+      <div class="section">
+        <h2>List the work activities you do </h2>
+        <p>Don’t think too much. Just list as many activities as you can from a typical work week.</p>
+        <div class="form">
+          <input type="text" placeholder="Add an activity " id="new_activity" name="new_activity" />
+          <p class="help-text">Hit enter to add your item. Add up to 10 items</p>
+        </div>
+        <div class="list" id="activities">
+          
+        </div>
+        <p><a class="button" href="#2">Next</a></p>
+      </div>
+  </div>
+
+  <div class="scene" id="2">
+      <a href="#1" class="back_button">Back</a>
+    <div class="section">
+      <h2>Which of these do you enjoy so much, you <strong>lose track of time</strong>?</h2>
+      <p class="help-text">Choose up to 6</p>
+      
+    <div id="all-activities" class="cards" data-group="1" data-limit="6">
+      
+    </div>
+    <p><a class="button" href="#3">Next</a></p>
+    </div>
+  </div>
+    <div class="scene" id="3">
+      <a href="#2" class="back_button">Back</a>
+    <div class="section">
+      <h2>Which <strong>ONE</strong> would you like to do more of?</h2>
+      <div id="energizing-activities" class="cards" data-group="2" data-limit="1">
+      
+      </div>
+      <p><a class="button" href="#4">Next</a></p>
+    </div>
+    </div>
+    <div class="scene" id="4">
+      <a href="#3" class="back_button">Back</a>
+    <div class="section">
+      <h2>What skills do you need to be better at <strong class="focus-activity-text" >designing user interfaces</strong>?</h2>
+
+      <div class="form">
+          <input type="text" placeholder="Add a skill " id="new_skill" name="new_skill" />
+          <p class="help-text">Hit enter to add your item. Add up to 10 items</p>
+        </div>
+        <div class="list" id="skills">
+          
+        </div>
+
+      <p><a class="button" href="#5">Next</a></p>
+    </div>
+    </div>
+    <div class="scene" id="5">
+      <a href="#4" class="back_button">Back</a>
+    <div class="section">
+      <h2>Select the <strong>ONE</strong> skill you want to focus on for <strong class="focus-activity-text">designing user interfaces</strong></h2>
+      <div id="all-skills" class="cards" data-group="3" data-limit="1">
+      
+      </div>
+      <p><a class="button" href="#6">Next</a></p>
+    </div>
+    </div>
+    
+  <div class="scene" id="9">
+      <a href="#8" class="back_button">Back</a>
+      <div class="section">
+        <h2>To get better at <strong class="focus-activity-text">designing user interfaces</strong>, I am working on <strong class="focus-skill-text">more frequent user research</strong> with a ... </h2>
+      
+      <div class="methods">
+        <div class="method_option person">
+          <i></i>
+          <span>Person</span>
+        </div>
+        <div class="method_option project">
+          <i></i>
+          <span>Project</span>
+        </div>
+        <div class="method_option playbook">
+          <i></i>
+          <span>Playbook</span>
+        </div>
+      </div>
+
+
+
+      <div id="skill_method_description">
+        <textarea id="skill_description" placeholder="Write what you will do"></textarea>
+      </div>
+      
+
+      </div>
+    <p>
+      <a href="#10" id="results" class="button">View Results</a>
+    </p>
+  </div>
+  </div>
+
+</div>
+  <script type="text/javascript">
+    var stage = document.getElementById("stage")
+    var new_activity = document.getElementById("new_activity")
+    var activityListDiv = document.getElementById("activities")
+    var skillListDiv = document.getElementById("skills")    
+    var allActivitiesDiv = document.getElementById("all-activities")
+    var allSkillsDiv = document.getElementById("all-skills")
+    var energizingActivitiesDiv = document.getElementById("energizing-activities")
+    var focusActivityDiv = document.getElementById("focus-activity")
+    var focusSkillTextDiv = document.querySelectorAll(".focus-skill-text")
+    var focusActivityTextDiv = document.querySelectorAll(".focus-activity-text")
+    var skillMethodButtons = document.querySelectorAll(".methods > div")
+    let text = '{"all_activities": [],' +
+                '"energizing_activities": [],'+
+                '"focus_activity": {"name": "","skills": []},'+
+                '"focus_skill": {"name": "", "method": "","description": ""}}';
+    let plan = JSON.parse(text);
+
+    new_skill.addEventListener("keydown", function(e) {
+      if (e.keyCode == 13 && new_skill.value != "") {
+        // add the item to the page
+        const listItemDiv = document.createElement("div")
+        listItemDiv.className = "list_item";
+        const listItemTextDiv = document.createElement("div")
+        listItemTextDiv.className = "text";
+        const removeDiv = document.createElement("div")
+        removeDiv.className = "remove";
+        listItemTextDiv.appendChild(document.createTextNode(new_skill.value));
+        listItemDiv.appendChild(listItemTextDiv)
+        listItemDiv.appendChild(removeDiv)
+        skillListDiv.appendChild(listItemDiv)
+        removeDiv.addEventListener( "click", removeItem)
+
+        // add to list of skills
+        plan.focus_activity.skills.push({"name":new_skill.value});
+        renderSkills()
+
+        // reset the field
+        new_skill.value = "";
+      }
+    })
+
+    new_activity.addEventListener("keydown", function(e) {
+      if (e.keyCode == 13 && new_activity.value != "") {
+
+        // add the item to the page
+        const listItemDiv = document.createElement("div")
+        listItemDiv.className = "list_item";
+        const listItemTextDiv = document.createElement("div")
+        listItemTextDiv.className = "text";
+        const removeDiv = document.createElement("div")
+        removeDiv.className = "remove";
+        listItemTextDiv.appendChild(document.createTextNode(new_activity.value));
+        listItemDiv.appendChild(listItemTextDiv)
+        listItemDiv.appendChild(removeDiv)
+        activityListDiv.appendChild(listItemDiv)
+        removeDiv.addEventListener( "click", removeItem)
+
+        // add to list of activities
+        plan.all_activities.push({"name":new_activity.value});
+        renderActivities()
+
+        // reset the field
+        new_activity.value = "";
+      }
+    })
+
+    function removeItem(e) {
+      var item = e.target.parentNode
+      var itemName = item.children[0].textContent
+      plan.all_activities = plan.all_activities.filter(element => element.name != itemName);
+      item.remove()
+      renderActivities()
+    }
+
+    function renderActivities() {
+      allActivitiesDiv.innerHTML = "";
+      plan.all_activities.forEach(function(activity, index){
+        const cardDiv = document.createElement("div")
+        cardDiv.className = "card";
+        const frontDiv = document.createElement("div")
+        frontDiv.className = "front";
+        const backDiv = document.createElement("div")
+        backDiv.className = "back";
+        frontDiv.appendChild(document.createTextNode(activity.name));
+        backDiv.appendChild(document.createTextNode(activity.name));
+        cardDiv.appendChild(frontDiv)
+        cardDiv.appendChild(backDiv)
+        allActivitiesDiv.appendChild(cardDiv)
+        cardDiv.addEventListener( "click", cardSelected)
+      })
+    }
+
+
+    function renderEnergizingActivities() {
+      energizingActivitiesDiv.innerHTML = "";
+      plan.energizing_activities.forEach(function(activity, index){
+        const cardDiv = document.createElement("div")
+        cardDiv.className = "card";
+        const frontDiv = document.createElement("div")
+        frontDiv.className = "front";
+        const backDiv = document.createElement("div")
+        backDiv.className = "back";
+        frontDiv.appendChild(document.createTextNode(activity.name));
+        backDiv.appendChild(document.createTextNode(activity.name));
+        cardDiv.appendChild(frontDiv)
+        cardDiv.appendChild(backDiv)
+        energizingActivitiesDiv.appendChild(cardDiv)
+        cardDiv.addEventListener( "click", cardSelected)
+      })
+    }
+
+    function renderSkills(){
+      allSkillsDiv.innerHTML = "";
+      plan.focus_activity.skills.forEach(function(skill, index){
+        const cardDiv = document.createElement("div")
+        cardDiv.className = "card";
+        const frontDiv = document.createElement("div")
+        frontDiv.className = "front";
+        const backDiv = document.createElement("div")
+        backDiv.className = "back";
+        frontDiv.appendChild(document.createTextNode(skill.name));
+        backDiv.appendChild(document.createTextNode(skill.name));
+        cardDiv.appendChild(frontDiv)
+        cardDiv.appendChild(backDiv)
+        allSkillsDiv.appendChild(cardDiv)
+        cardDiv.addEventListener( "click", cardSelected)
+      })
+    }
+
+    function renderFocusActivity(){
+      focusActivityTextDiv.forEach(function(div, index) {
+        div.textContent = plan.focus_activity.name
+      })
+      
+      console.log("add to focus activities", plan.focus_activity)
+    }
+
+    function renderFocusSkill(){
+      focusSkillTextDiv.forEach(function(div, index) {
+        div.textContent = plan.focus_skill.name
+      })
+      console.log("add to focus skill", plan.focus_skill.name)
+    }
+
+
+    var cards = document.querySelectorAll('.card');
+    var buttons = document.querySelectorAll('.button');
+    var backButtons = document.querySelectorAll('.back_button');
+    var steps = document.querySelectorAll('.step');
+    var steps_count = 0;
+    var scrollPosition = 0;
+    var progress = document.getElementById('progress')
+    
+
+    var demoDiv = document.getElementById("finger-tap");
+    
+    var selectedCards = {
+      0: 0,
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      6: 0,
+      7: 0,
+      8: 0
+    }
+
+    function collectionHas(a, b) { //helper function (see below)
+      for(var i = 0, len = a.length; i < len; i ++) {
+          if(a[i] == b) return true;
+      }
+      return false;
+    }
+
+    function findParentBySelector(elm, selector) {
+      var all = document.querySelectorAll(selector);
+      var cur = elm.parentNode;
+      while(cur && !collectionHas(all, cur)) { //keep going up until you find a match
+          cur = cur.parentNode; //go up
+      }
+      return cur; //will return null if not found
+    }
+
+    function updateStep(direction) {
+      if (direction == "next") {
+        progress.children[steps_count].classList.add("done")
+      } else {
+        progress.children[steps_count - 1].classList.remove("done")
+      }
+    }
+
+    function nextScene(e) {
+      let current_scene = findParentBySelector(e.target, '.scene')
+      var nextSceneDiv = current_scene.nextElementSibling
+      
+      switch(e.target.id) {
+        case "to_demo":
+          demoDiv.classList.add("animate") // animate the instructions
+          break;
+        case "results":
+          focusMotivatorDefinitionDiv.textContent = focusMotivatorDefinition.value
+          focusMotivatorWhyDiv.textContent = focusMotivatorWhy.value
+          break;
+        default:
+      }
+
+      updateStep("next")
+      steps_count ++;
+      scrollPosition += $(current_scene).height()
+      e.preventDefault();
+      $(stage).animate({
+          scrollTop: scrollPosition
+        })
+
+    }
+
+    function previousScene(e) {
+      let current_scene = findParentBySelector(e.target, '.scene')
+      var previousScene = current_scene.previousElementSibling
+      
+      updateStep("prev");
+      steps_count --
+
+      scrollPosition -= $(current_scene).height()
+      e.preventDefault();
+      $(stage).animate({
+          scrollTop: scrollPosition
+        })
+    }
+
+
+    function cardSelected(e) {
+      let cards = findParentBySelector(e.target, ".cards");
+      let card = findParentBySelector(e.target, ".card");
+
+      let group_count = selectedCards[parseInt(cards.dataset.group)];
+      let group_limit = parseInt(cards.dataset.limit);
+      
+
+      if ((group_count < group_limit ) || card.classList.contains("is_flipped")) {
+        card.classList.toggle("is_flipped"); // flip the card
+        // if it's flipped to the back
+        if (card.classList.contains("is_flipped")) {
+          // up the number of selected cards for the group
+          selectedCards[parseInt(cards.dataset.group)] ++;
+          // decide what to do based on the id of the cards div
+          switch(cards.id) {
+            case "all-activities":
+              plan.energizing_activities.push({"name":e.target.textContent});
+              renderEnergizingActivities()
+              break;
+            case "energizing-activities":
+              plan.focus_activity.name = e.target.textContent;
+              renderFocusActivity()
+              break;
+            case "all-skills":
+              plan.focus_skill.name = e.target.textContent;
+              renderFocusSkill()
+              break
+            default:
+              
+          }
+        } else {
+          selectedCards[parseInt(cards.dataset.group)] --;
+          switch(cards.id) {
+            case "all-activities":
+              plan.energizing_activities.splice(plan.energizing_activities.indexOf({"name": e.target.textContent}))
+              break;
+            case "energizing-activities":
+              plan.focus_activities.splice(plan.focus_activities.indexOf({"name": e.target.textContent}))
+              break;
+            case "all-skills":
+              plan.focus_skill.name = "";
+              renderFocusSkill()
+            default:
+              
+          }
+        }
+      } else {
+        card.classList.add("shake_it_up");
+        setTimeout(removeShake, 500)
+      }
+      function removeShake(){
+        card.classList.remove("shake_it_up")
+      }
+    }
+
+    function selectSkillMethod(e){
+      
+      // Check if they clicked a child of the div and add a selected class to the right div
+      var method;
+      if (e.target.classList.contains("method_option")) {
+        method = e.target
+      } else {
+        method = findParentBySelector(e.target, ".method_option")
+      }
+      document.querySelectorAll(".method_option").forEach(function(option, index){
+        option.classList.remove("selected")
+      })
+      method.classList.add("selected")
+
+      document.getElementById("skill_method_description").classList.add("visible")
+    }
+
+
+    for(var i = 0; i < cards.length; i++) {
+      cards[i].addEventListener( "click", cardSelected)
+    }
+
+    for(var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener( "click", nextScene)
+    }
+
+    for(var i = 0; i < backButtons.length; i++) {
+      backButtons[i].addEventListener( "click", previousScene)
+    }
+
+    for(var i = 0; i < skillMethodButtons.length; i++) {
+      skillMethodButtons[i].addEventListener( "click", selectSkillMethod)
+    }
+
+  </script>
+</body>
+</html>

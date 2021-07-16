@@ -650,14 +650,14 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="step"></div>
     <div class="step"></div>
     <div class="step"></div>
+    <div class="step"></div>
   </div>
   <div id="stage">
     <div class="scene intro" id="0">
       <div class="section">
         <a href="https://getcampfire.com"><img src="campfire-logo.svg" id="campfire_logo" /></a>
-        <h1>Discover what drives you</h1>
-        <p>Drivers are the "why" behind what you do. This activity will help you identify and prioritize the drivers in your life and career. You'll identify one focus driver and reflect on what it means to you. 
-        </p>  
+        <h1>Discover your drivers</h1>
+        <p>Drivers are the why behind what you do. Connect the work you’re doing today with your long-term vision for your career and you'll do more inspired work. This tool will help you identify your top driver and determine what it means to you.</p>
         <a class="button" href="#1">Get Started</a>
       </div>
     </div>
@@ -699,7 +699,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene" id="1">
       <a href="#0" class="back_button">Back</a>
       <div class="section">
-        <h2>Which <strong>two</strong> best describe what drives you?</h2>
+        <h2>Which <strong>two</strong> best describe what you value most?</h2>
         <div class="cards" data-group="1" data-limit="2">
           <div class="card">
             <div class="front">Creativity</div>
@@ -730,8 +730,8 @@ iteration-count | direction | fill-mode | play-state | name */
             <div class="back">Freedom</div>
           </div>
           <div class="card">
-            <div class="front">Passions</div>
-            <div class="back">Passions</div>
+            <div class="front">Passion</div>
+            <div class="back">Passion</div>
           </div>
           <div class="card">
             <div class="front">Adventure</div>
@@ -744,7 +744,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene" id="2">
       <a href="#1" class="back_button">Back</a>
     <div class="section">
-      <h2>Which <strong>two</strong> best describe what drives you?</h2>
+      <h2>Which <strong>two</strong> best describe what motivates you?</h2>
     <div class="cards" data-group="2" data-limit="2">
       <div class="card">
         <div class="front">Opportunity</div>
@@ -776,7 +776,7 @@ iteration-count | direction | fill-mode | play-state | name */
       </div>
       <div class="card">
         <div class="front">Skill Building</div>
-        <div class="back">Skill building</div>
+        <div class="back">Skill Building</div>
       </div>
       <div class="card">
         <div class="front">Learning</div>
@@ -789,7 +789,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene" id="3">
       <a href="#2" class="back_button">Back</a>
     <div class="section">
-      <h2>Which <strong>two</strong> best describe what drives you?</h2>
+      <h2>Which <strong>two</strong> best describe what you want most?</h2>
       <div class="cards" data-group="3" data-limit="2">
         <div class="card">
           <div class="front">Leadership</div>
@@ -834,7 +834,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene" id="4">
       <a href="#3" class="back_button">Back</a>
     <div class="section">
-      <h2>Which <strong>two</strong> best describe what drives you?</h2>
+      <h2>Which <strong>two</strong> best describe what you need?</h2>
       <div class="cards" data-group="4" data-limit="2">
         <div class="card">
           <div class="front">Job Title</div>
@@ -879,7 +879,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene" id="5">
       <a href="#4" class="back_button">Back</a>
     <div class="section">
-      <h2>Which <strong>two</strong> best describe what drives you?</h2>
+      <h2>Which <strong>two</strong> best describe what you value most?</h2>
       <div class="cards" data-group="5" data-limit="2">
         <div class="card">
           <div class="front">Empathy</div>
@@ -924,7 +924,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene" id="6">
       <a href="#5" class="back_button">Back</a>
     <div class="section">
-      <h2>Which <strong>two</strong> best describe what drives you?</h2>
+      <h2>Which <strong>two</strong> are most important to you?</h2>
       <div class="cards"  data-group="6" data-limit="2">
         <div class="card">
           <div class="front">Brand</div>
@@ -969,7 +969,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene final-six" id="7">
       <a href="#6" class="back_button">Back</a>
       <div class="section">
-        <h2>Which <strong>SIX</strong> best describe what drives you?</h2>
+        <h2>Which <strong>SIX</strong> best describe what you are about?</h2>
         <div id="selected-motivators" class="cards" data-group="7" data-limit="6">
           
         </div>
@@ -977,32 +977,43 @@ iteration-count | direction | fill-mode | play-state | name */
     </div>
     
   </div>
-  <div class="scene focus-motivator" id="8">
+  <div class="scene final-six" id="8">
       <a href="#7" class="back_button">Back</a>
       <div class="section">
-        <h2>Choose the <strong>ONE</strong> that best describe what drives you?</h2>
-        <div class="cards" id="top-motivators" data-group="8" data-limit="1">
+        <h2>Which <strong>THREE</strong> best describe what truly drives you?</h2>
+        <div id="top-six-motivators" class="cards" data-group="9" data-limit="3">
           
         </div>
         <p><a class="button" href="#9">Next</a></p>
     </div>
+    
   </div>
-  <div class="scene" id="9">
+  <div class="scene focus-motivator" id="9">
       <a href="#8" class="back_button">Back</a>
+      <div class="section">
+        <h2>Choose the <strong>ONE</strong> that you want fullfilled most right now?</h2>
+        <div class="cards" id="top-three-motivators" data-group="10" data-limit="1">
+          
+        </div>
+        <p><a class="button" href="#10">Next</a></p>
+    </div>
+  </div>
+  <div class="scene" id="10">
+      <a href="#9" class="back_button">Back</a>
       <div class="section">
         <p class="intro">What does <strong class="focusMotivatorText"></strong> mean to you?</p>
         <textarea id="focusMotivatorDefinition"></textarea>
 
-        <p>Why is <strong class="focusMotivatorText"></strong> a drive for you?</p>
+        <p>Why is <strong class="focusMotivatorText"></strong> a driver for you?</p>
         <textarea id="focusMotivatorWhy"></textarea>
 
     </div>
     <p>
-      <a href="#10" id="results" class="button">View Results</a>
+      <a href="#11" id="results" class="button">View Results</a>
     </p>
   </div>
-  <div class="scene results" id="10">
-      <a href="#9" class="back_button">Back</a>
+  <div class="scene results" id="11">
+      <a href="#10" class="back_button">Back</a>
       <div class="section">
         <div id="report">
           
@@ -1036,12 +1047,14 @@ iteration-count | direction | fill-mode | play-state | name */
     var scrollPosition = 0;
     var progress = document.getElementById('progress')
     var selectedMotivatorsDiv = document.getElementById("selected-motivators")
-    var topMotivatorsDiv = document.getElementById("top-motivators")
+    var top6MotivatorsDiv = document.getElementById("top-six-motivators")
+    var top3MotivatorsDiv = document.getElementById("top-three-motivators")
     var finishedMotivatorsDiv = document.getElementById("finished_motivators")
     var selectedMotivators = []
-    var topMotivators = []
+    var top6Motivators = []
+    var top3Motivators = []
     var focusMotivators = []
-    var focusMotivator = document.querySelectorAll(".focusMotivatorText");
+    var focusMotivatorText = document.querySelectorAll(".focusMotivatorText");
     
     var focusMotivatorDefinition = document.getElementById("focusMotivatorDefinition");
     var focusMotivatorDefinitionDiv = document.getElementById("focusMotivatorDefinitionDiv")
@@ -1060,7 +1073,9 @@ iteration-count | direction | fill-mode | play-state | name */
       5: 0,
       6: 0,
       7: 0,
-      8: 0
+      8: 0,
+      9: 0,
+      10:0
     }
 
     function collectionHas(a, b) { //helper function (see below)
@@ -1136,18 +1151,18 @@ iteration-count | direction | fill-mode | play-state | name */
 
     function renderFinishedMotivators() {
         finishedMotivatorsDiv.innerHTML = "";
-        topMotivators.forEach(function(value, index){
+        top6Motivators.forEach(function(value, index){
           const cardDiv = document.createElement("div")
           cardDiv.className = "motivator";
           cardDiv.appendChild(document.createTextNode(value));
           finishedMotivatorsDiv.appendChild(cardDiv)
         })
-        
     }
 
-    function renderTop12Motivators() {
-      selectedMotivatorsDiv.innerHTML = "";
-      selectedMotivators.forEach(function(value, index){
+    function renderCardSet(set, container){
+      container.innerHTML = "";
+
+      set.forEach(function(value, index){
         const cardDiv = document.createElement("div")
         cardDiv.className = "card";
         const frontDiv = document.createElement("div")
@@ -1158,38 +1173,16 @@ iteration-count | direction | fill-mode | play-state | name */
         backDiv.appendChild(document.createTextNode(value));
         cardDiv.appendChild(frontDiv)
         cardDiv.appendChild(backDiv)
-        selectedMotivatorsDiv.appendChild(cardDiv)
-        cardDiv.addEventListener( "click", cardSelected)
-      })
-    }
-
-    function renderTop6Motivators() {
-      topMotivatorsDiv.innerHTML = "";
-
-      topMotivators.forEach(function(value, index){
-        const cardDiv = document.createElement("div")
-        cardDiv.className = "card";
-        const frontDiv = document.createElement("div")
-        frontDiv.className = "front";
-        const backDiv = document.createElement("div")
-        backDiv.className = "back";
-        frontDiv.appendChild(document.createTextNode(value));
-        backDiv.appendChild(document.createTextNode(value));
-        cardDiv.appendChild(frontDiv)
-        cardDiv.appendChild(backDiv)
-        topMotivatorsDiv.appendChild(cardDiv)
+        container.appendChild(cardDiv)
         cardDiv.addEventListener( "click", cardSelected)
       })
     }
 
     function cardSelected(e) {
-
       let cards = findParentBySelector(e.target, ".cards");
       let card = findParentBySelector(e.target, ".card");
-
       let group_count = selectedCards[parseInt(cards.dataset.group)];
       let group_limit = parseInt(cards.dataset.limit);
-      
 
       if ((group_count < group_limit ) || card.classList.contains("is_flipped")) {
         card.classList.toggle("is_flipped"); // flip the card
@@ -1202,46 +1195,58 @@ iteration-count | direction | fill-mode | play-state | name */
             case "demo":
               break;
             case "selected-motivators":
-              topMotivators.push(e.target.textContent); // put the selection in the top6 array
-              renderTop6Motivators();
+              top6Motivators.push(e.target.textContent); // put the selection in the top6 array
+              renderCardSet(top6Motivators, top6MotivatorsDiv)
+              break;
+            case "top-six-motivators":
+              top3Motivators.push(e.target.textContent)
+              renderCardSet(top3Motivators, top3MotivatorsDiv)
+              // Anytime we change the top 6, remove the Focus Driver
               focusMotivators.pop();
               selectedCards[8] = 0;
-              // render the top Motivators
               break;
-            case "top-motivators":
+
+            case "top-three-motivators":
               focusMotivators.push(e.target.textContent)
 
-              focusMotivator.forEach(function(value, index){
+              focusMotivatorText.forEach(function(value, index){
                 value.textContent = e.target.textContent
               })
               renderFinishedMotivators()
               break;
             default:
               selectedMotivators.push(e.target.textContent);
-              renderTop12Motivators()
+              renderCardSet(selectedMotivators, selectedMotivatorsDiv)
           }
         } else {
           selectedCards[parseInt(cards.dataset.group)] --;
           switch(cards.id) {
             case "demo":
               break;
+
             case "selected-motivators":
-              topMotivators.splice(topMotivators.indexOf(e.target.textContent), 1)
+              top6Motivators.splice(top6Motivators.indexOf(e.target.textContent), 1);
+              renderCardSet(top6Motivators, top6MotivatorsDiv);
+              break;
+            
+            case "top-six-motivators":
+              top3Motivators.splice(top3Motivators.indexOf(e.target.textContent), 1);
+              renderCardSet(top3Motivators, top3MotivatorsDiv);
               focusMotivators.pop();
               selectedCards[8] = 0;
-              renderTop6Motivators()
               break;
-            case "top-motivators":
-              focusMotivators.splice(focusMotivators.indexOf(e.target.textContent), 1)
+
+            case "top-three-motivators":
+              focusMotivators.splice(focusMotivators.indexOf(e.target.textContent), 1);
 
               focusMotivator.forEach(function(value, index){
-                value.textContent = e.target.textContent
+                value.textContent = e.target.textContent;
               })
               renderFinishedMotivators()
               break;
             default:
-              selectedMotivators.splice(selectedMotivators.indexOf(e.target.textContent), 1)
-              renderTop12Motivators()
+              selectedMotivators.splice(selectedMotivators.indexOf(e.target.textContent), 1);
+              renderCardSet(selectedMotivators, selectedMotivatorsDiv);
           }
         }
       } else {
@@ -1252,6 +1257,8 @@ iteration-count | direction | fill-mode | play-state | name */
         card.classList.remove("shake_it_up")
       }
     }
+
+
 
     for(var i = 0; i < cards.length; i++) {
       cards[i].addEventListener( "click", cardSelected)

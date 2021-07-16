@@ -978,7 +978,7 @@ iteration-count | direction | fill-mode | play-state | name */
 
       <div id="skill_method_description">
         <p id="method_prompt"></p>
-        <textarea id="skill_description" placeholder="Write about the person"></textarea>
+        <textarea id="skill_description" placeholder="Write more details"></textarea>
       </div>
 
 
@@ -1360,13 +1360,13 @@ iteration-count | direction | fill-mode | play-state | name */
 
       switch(method.children[1].textContent) {
         case "Person":
-          methodPrompt.textContent = "Describe the type of person who can help you build this skill?";
+          methodPrompt.textContent = "Describe the type of person who can help you build this skill:";
           break;
         case "Project":
-          methodPrompt.textContent = "What project could you do that would stretch you to learn this skill?";
+          methodPrompt.textContent = "Describe a project that would help you build this skill:";
           break;
         case "Playbook":
-          methodPrompt.textContent = "What book, course, conference or other resource would help you build this skill?"
+          methodPrompt.textContent = "Describe a learning resources that would help you build this skill:"
           break;
         default:
       }

@@ -125,6 +125,11 @@
       font-weight: 600;
       letter-spacing: -.075rem;
       line-height: 1.33;
+      margin-bottom: .5rem;
+    }
+
+    h2 + p {
+      margin: 0 0 1.25rem;
     }
 
     strong {
@@ -326,7 +331,7 @@
 
     textarea {
       font-family:  'Spartan';
-      font-size:  1.2rem;
+      font-size:  1.125rem;
       padding:  1.5rem;
       border: 2px solid rgba(0,0,0,.25);
       border-radius: 7px;
@@ -336,8 +341,9 @@
       transition: all .25s cubic-bezier(.25,.8,.25,1);
       width:  100%;
       max-width: 600px;
-      min-height:  100px;
+      min-height:  80px;
       line-height: 1.5;
+      margin-bottom: 2rem;
     }
 
     textarea:focus {
@@ -388,6 +394,7 @@
       font-size:  2.75rem;
       font-weight:  800;
       line-height: .75;
+      margin:  1.5rem 0 2rem;
     }
 
     .focus_description {
@@ -432,6 +439,44 @@ iteration-count | direction | fill-mode | play-state | name */
 
     #finger-tap.animate #pointer {
       animation:  taps 3s cubic-bezier(.25,.8,.25,1) 2s forwards;
+    }
+
+    .motivator_descriptions {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      justify-items: center;
+      margin:  3rem 0;
+    }
+
+    .motivator_descriptions div {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      border:  3px solid transparent;
+      border-radius: 15px;
+      cursor: pointer;
+      padding: .5rem 2rem 2rem 2rem;
+      align-items: center;
+      margin: 0;
+      width: 48%;
+    }
+
+    .motivator_descriptions div span {
+      text-transform: uppercase;
+      font-size: .75rem;
+      letter-spacing: .05rem;
+      font-weight: 600;
+    }
+
+    .motivator_descriptions div em {
+      font-style:  normal;
+      font-size:  .75rem;
+      display: block;
+      margin-top:  .5rem;
+      color:  #7C6895;
+      line-height:  1.25;
+
     }
 
 
@@ -903,7 +948,7 @@ iteration-count | direction | fill-mode | play-state | name */
     <div class="scene final-six" id="7">
       <a href="#6" class="back_button">Back</a>
       <div class="section">
-        <h2>Which <strong>two</strong> best describe what motivates you in your career?</h2>
+        <h2>Which <strong>SIX</strong> best describe what motivates you in your career?</h2>
         <div id="selected-motivators" class="cards" data-group="7" data-limit="6">
 
         </div>
@@ -954,13 +999,17 @@ iteration-count | direction | fill-mode | play-state | name */
           <div id="focus_motivator">
             <span class="description">Focus Driver</span>
             <h2 class="focusMotivatorText"></h2>
-
-            <p id="focusMotivatorDefinitionDiv">
-            </p>
-
-            <p id="focusMotivatorWhyDiv">
-            </p>
-          </div>
+      <div class="motivator_descriptions">
+        <div class="method_option">
+          <span>What it means to me</span>
+            <em id="focusMotivatorDefinitionDiv"></em>
+        </div>
+        <div class="method_option project">
+          <span>Why it drives me</span>
+          <em id="focusMotivatorWhyDiv"></em>
+        </div>
+      </div>
+          
 
           <span class="description">Core Drivers</span>
           <div id="finished_motivators">
